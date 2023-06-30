@@ -4,43 +4,13 @@ import NsHero from '../components/NsHero.astro'
 import ResSection from '../components/ResSection'
 import data from '../data/resourse.json'
 import type { DataResource } from '../types/Res'
-
-const target = {} as {
-  // index string
-  [key: string]: {
-    [key: string]: DataResource[]
-  }
-}
-
-data.forEach((item) => {
-  if (!target[item.l1_title]) {
-    target[item.l1_title] = {}
-  }
-  if (!target[item.l1_title][item.l2_title]) {
-    target[item.l1_title][item.l2_title] = []
-  }
-  target[item.l1_title][item.l2_title].push(item)
-})
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="px-0 z-1">
     <NsHero />
     <div class="max-w-[1080px] mx-auto">
-      {
-        Object.entries(target).map(([l1title,line]) => {
-          return (
-            <>
-              <h1 class="text-2xl font-bold my-6">{l1title}</h1>
-              {Object.entries(line).map(([l2title,items]) => {
-                return (
-                <h2 class="text-xl">{l2title}</h2>  
-                <ResSection list={items} />)
-              })}
-            </>
-          )
-        })
-      }
+      <ResSection list={data} />
     </div>
   </main>
 </Layout>
