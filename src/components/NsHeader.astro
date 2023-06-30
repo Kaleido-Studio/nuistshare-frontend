@@ -1,10 +1,16 @@
 ---
 ---
 
-<header class="flex flex-row justify-around fixed w-full mt-0">
+<header
+  class="flex flex-row border-b-gray-300 border-b dummy justify-around fixed left-0 right-0 bg-white/30 py-4 backdrop-blur-sm top-0"
+>
   <!-- create a title and a search bar -->
   <div class="title">
-    <h1><a href="/" class="text-black decoration-none">Nuistshare</a></h1>
+    <h1>
+      <a href="/" class="text-black decoration-none text-3xl font-bold"
+        >Nuistshare</a
+      >
+    </h1>
   </div>
 
   <!-- create a search bar -->
@@ -14,3 +20,9 @@
     </form>
   </div>
 </header>
+
+<style>
+  .dummy {
+    z-index: 255 !important;
+  }
+</style>

@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import NsHero from '../components/NsHero.astro'
+import ResSection from '../components/ResSection'
+import data from '../data/resourse.json'
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="px-0">
+  <main class="px-0 z-1">
     <NsHero />
+    <ResSection list={data} />
   </main>
 </Layout>

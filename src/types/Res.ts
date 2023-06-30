@@ -5,4 +5,4 @@ interface Resource {
   l2_title: string
 }
 
-export { Resource }
+export type { Resource as DataResource }
