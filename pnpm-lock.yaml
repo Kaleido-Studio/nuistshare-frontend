@@ -17,6 +17,9 @@ dependencies:
   astro:
     specifier: ^2.7.1
     version: 2.7.1
+  solid-bottomsheet:
+    specifier: ^1.1.0
+    version: 1.1.0(solid-js@1.7.7)
   solid-js:
     specifier: ^1.4.3
     version: 1.7.7
@@ -4262,6 +4265,14 @@ packages:
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
     dev: true
+
+  /solid-bottomsheet@1.1.0(solid-js@1.7.7):
+    resolution: {integrity: sha512-EkHDCP2sEO7diCIT2BgkIHN6DqIlo0B/tSiCVcVO2xUpVlD1ocOy3t4wKp97ZZiLZ6Sg/Jq5EYQzalg17wNwsQ==}
+    peerDependencies:
+      solid-js: '>=1.0.0'
+    dependencies:
+      solid-js: 1.7.7
+    dev: false
 
   /solid-js@1.7.7:
     resolution: {integrity: sha512-SPdYVke/Z6Za24PBTbULyQYPrhGO1ZbPany76atO2zF2dmYn2pCotbsw1JtlgWnr9dK2JbwPGnA3ODTGPLhZNw==}

@@ -1,21 +1,27 @@
 ---
+import TabBtn from './TabBtn'
 ---
 
 <header
-  class="flex flex-row item-center border-b-gray-300 border-b dummy justify-around fixed left-0 right-0 bg-white/30 py-4 backdrop-blur-sm top-0"
+  class="flex flex-row item-center border-b-gray-300 border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 bg-white/30 py-4 backdrop-blur-sm top-0"
 >
   <!-- create a title and a search bar -->
   <div class="title">
     <h1>
-      <a href="/" class="text-black decoration-none text-3xl font-bold"
+      <a
+        href="/"
+        class="text-black decoration-none sm:text-3xl text-2xl font-bold"
         >Nuistshare</a
       >
     </h1>
   </div>
 
   <!-- create a search bar -->
-  <div class="search hover:cursor-pointer hover:opacity-60 flex">
-    <img width="25" height="25" src="/search.svg" />
+  <div class="flex w-[4rem] justify-between">
+    <div class="search hover:cursor-pointer hover:opacity-60 inline-flex">
+      <img width="25" height="25" src="/search.svg" />
+    </div>
+    <TabBtn client:load />
   </div>
 </header>
 

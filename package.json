@@ -14,6 +14,7 @@
     "@astrojs/tailwind": "^4.0.0",
     "@typescript-eslint/parser": "^5.60.1",
     "astro": "^2.7.1",
+    "solid-bottomsheet": "^1.1.0",
     "solid-js": "^1.4.3",
     "tailwindcss": "^3.0.24"
   },
