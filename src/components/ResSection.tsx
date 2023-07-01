@@ -1,6 +1,7 @@
 import { For, type Component } from 'solid-js'
 import type { DataResource } from '../types/Res'
 import ResCard from './ResCard'
+import '../styles/section.css'
 
 const ResList: Component<{ list: DataResource[] }> = (props) => {
   const target = {} as {
@@ -27,15 +28,21 @@ const ResList: Component<{ list: DataResource[] }> = (props) => {
         {([l1title, line]) => {
           return (
             <>
-              <h1 class="text-2xl font-bold my-6">{l1title}</h1>
+              <h1 class="divider text-3xl text-center font-bold my-6">
+                {l1title}
+              </h1>
               {Object.entries(line).map(([l2title, items]) => {
                 return (
                   <>
-                    <div class="w-[1080px]">
-                      <h2 class="text-xl">{l2title}</h2>
-                      <div class="flex  flex-wrap auto-cols-min container z-1 items-start relative  mx-auto">
-                        <For each={items}>{(res) => <ResCard {...res} />}</For>
-                      </div>
+                    <div class="w-auto mx-auto py-5">
+                      <fieldset class="border-1 slight-shadow bg-[#fbfbfb]  sm:px-12 px-4 py-5">
+                        <legend class="text-2xl  text-center">{l2title}</legend>
+                        <div class="flex  flex-wrap auto-cols-min container z-1 items-start relative  mx-auto">
+                          <For each={items}>
+                            {(res) => <ResCard {...res} />}
+                          </For>
+                        </div>
+                      </fieldset>
                     </div>
                   </>
                 )

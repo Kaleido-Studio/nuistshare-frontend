@@ -1,0 +1,18 @@
+.divider::before,
+.divider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: gray;
+    opacity: 0.2;
+    margin: 5px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+}
+
+.slight-shadow {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .04), 0 4px 12px rgba(0, 0, 0, .08), 0 2px 4px rgba(0, 0, 0, .06)
+}
