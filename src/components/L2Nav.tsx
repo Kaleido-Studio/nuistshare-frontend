@@ -3,16 +3,15 @@ import sideBar from './SideBar'
 import { currentL2Listing } from '../data'
 
 const L1Nav = () => {
-  const titles = currentL2Listing()
   return (
-    <div class="sticky top-[10rem] p-6">
+    <div class="sticky top-[10rem] p-6 slight-shadow m-5 w-[12rem] border-1 ">
       <div class="py-3 text-xl font-bold">
         <h1>课程</h1>
       </div>
       <div class="">
         {/* for each item in titles */}
         <ul>
-          <For each={[...titles.values()]}>
+          <For each={[...currentL2Listing().values()]}>
             {(title) => {
               return (
                 <li class="py-2">

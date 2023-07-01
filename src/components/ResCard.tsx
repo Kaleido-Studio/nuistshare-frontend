@@ -3,7 +3,7 @@ import type { DataResource } from '../types/Res'
 
 const ResCard: Component<DataResource> = (props) => {
   const card = (
-    <div class="sm:basis-1/2 basis-1/1 sm:px-2 py-2 w-full">
+    <div class="xl:basis-1/2 basis-1/1 md:px-2 py-2 w-full">
       <div class="slight-shadow rounded-xl   z-1 py-5 flex justify-between relative bg-[#ffffff] items-center h-auto  px-4 hover:shadow-xl transition duration-300">
         <h2 class="font-bold truncate max-w-[13rem]">{props.title}</h2>
 

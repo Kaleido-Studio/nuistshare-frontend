@@ -1,8 +1,8 @@
 import data from './resourse.json'
 import { createMemo, createSignal } from 'solid-js'
 
-const [currentL1Title, setL1] = createSignal('数学类')
-const [currentL2Title, setL2] = createSignal('JavaScript')
+export const [currentL1Title, setL1] = createSignal('数学类')
+export const [currentL2Title, setL2] = createSignal('JavaScript')
 
 export const currentL1Listing = createMemo(() => {
   const l1_title_set = new Set<string>()
@@ -15,9 +15,10 @@ export const currentL1Listing = createMemo(() => {
 
 export const currentL2Listing = createMemo(() => {
   const l2_title_set = new Set<string>()
+  const title = currentL1Title()
 
   data.forEach((item: any) => {
-    if (item.l1_title === currentL1Title()) {
+    if (item.l1_title === title) {
       l2_title_set.add(item.l2_title)
     }
   })
@@ -35,6 +36,3 @@ export const getTitles = () => {
 
   return { l1_title_set, l2_title_set }
 }
-const dummyInnner = <T>(data: T) => data
-
-const dummyFun = <Z, M>(data: typeof dummyInnner<Z>) => dummyInnner(data)

@@ -2,7 +2,7 @@
 ---
 
 <header
-  class="flex flex-row border-b-gray-300 border-b dummy justify-around fixed left-0 right-0 bg-white/30 py-4 backdrop-blur-sm top-0"
+  class="flex flex-row item-center border-b-gray-300 border-b dummy justify-around fixed left-0 right-0 bg-white/30 py-4 backdrop-blur-sm top-0"
 >
   <!-- create a title and a search bar -->
   <div class="title">
@@ -14,10 +14,8 @@
   </div>
 
   <!-- create a search bar -->
-  <div class="search">
-    <form action="{{ site.baseurl }}/search" method="get">
-      <input type="text" name="q" placeholder="Search..." />
-    </form>
+  <div class="search hover:cursor-pointer hover:opacity-60 flex">
+    <img width="25" height="25" src="/search.svg" />
   </div>
 </header>
 
