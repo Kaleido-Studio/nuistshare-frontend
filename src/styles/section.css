@@ -16,3 +16,7 @@
 .slight-shadow {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .04), 0 4px 12px rgba(0, 0, 0, .08), 0 2px 4px rgba(0, 0, 0, .06)
 }
+
+:target {
+    scroll-margin-top: 7rem;
+}
