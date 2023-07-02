@@ -14,7 +14,7 @@ const L1Nav = () => {
           <For each={[...currentL2Listing().values()]}>
             {(title) => {
               return (
-                <li class="py-2">
+                <li class="py-1">
                   <a href={`#${title}`}>{title}</a>
                 </li>
               )
