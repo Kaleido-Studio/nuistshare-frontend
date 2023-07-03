@@ -23,12 +23,8 @@ const TabBtn = () => {
       {isSnapVariantOpen() && (
         <SolidBottomsheet
           variant="snap"
-          defaultSnapPoint={({ maxHeight }) => maxHeight / 2}
-          snapPoints={({ maxHeight }) => [
-            maxHeight,
-            maxHeight / 2,
-            maxHeight / 1.5,
-          ]}
+          defaultSnapPoint={({ maxHeight }) => maxHeight / 1.4}
+          snapPoints={({ maxHeight }) => [maxHeight / 2, maxHeight / 1.4]}
           onClose={() => setSnapVariantOpen(false)}
         >
           <div class="text-center text-xl font-bold py-3">

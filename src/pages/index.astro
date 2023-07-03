@@ -14,7 +14,7 @@ import L2Nav from '../components/L2Nav'
       <L1Nav client:load />
     </div>
     <div class="max-w-[1080px] mx-auto md:col-span-2 col-span-4">
-      <ResSection list={data} />
+      <ResSection client:load list={data} />
     </div>
     <div class="col-span-1 hidden md:block sticky top-[40rem]">
       <L2Nav client:load />
