@@ -6,7 +6,7 @@
     <h1>
       <a
         href="/"
-        class="text-white tracking-[0.1rem] decoration-none sm:text-3xl text-2xl"
+        class="text-white tracking-[0.1rem] title-font decoration-none sm:text-3xl text-2xl"
         >Nuistshare</a
       >
     </h1>

@@ -1,3 +1,4 @@
 <template>
   <NsHero />
+  <NsSectionOne />
 </template>
