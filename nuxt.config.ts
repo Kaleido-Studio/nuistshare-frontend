@@ -16,4 +16,8 @@ export default defineNuxtConfig({
       ],
     },
   },
+  build: {
+    // extractCSS: true,
+    transpile: ["tdesign-vue-next"],
+  }
 });

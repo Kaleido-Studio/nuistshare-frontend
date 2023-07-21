@@ -11,11 +11,12 @@
       >
     </h1>
 
-    <!-- create a search bar -->
-    <div class="flex w-[4rem] justify-between">
-      <div class="search hover:cursor-pointer hover:opacity-60 inline-flex">
-        <img width="25" height="25" src="/search.svg" />
-      </div>
+    <div class="flex flex-row items-center">
+      <NuxtLink to="/entries" >
+        <h1 class="text-white text-xl">
+          全部
+        </h1>
+      </NuxtLink>
     </div>
   </header>
 </template>

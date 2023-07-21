@@ -1,3 +1,7 @@
+<script setup>
+import 'tdesign-vue-next/es/style/index.css';
+</script>
+
 <template>
   <NsHeader />
   <NuxtPage />
