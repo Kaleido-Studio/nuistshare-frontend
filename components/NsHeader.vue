@@ -4,18 +4,16 @@
   >
     <!-- create a title and a search bar -->
     <h1>
-      <a
-        href="/"
-        class="text-white tracking-[0.1rem] title-font decoration-none sm:text-3xl text-2xl"
-        >Nuistshare</a
+      <NuxtLink
+        to="/"
+        class="overlay text-decoration-none tracking-[0.1rem] title-font decoration-none sm:text-3xl text-2xl"
+        >Nuistshare</NuxtLink
       >
     </h1>
 
     <div class="flex flex-row items-center">
-      <NuxtLink to="/entries" >
-        <h1 class="text-white text-xl">
-          全部
-        </h1>
+      <NuxtLink to="/entries">
+        <h1 class="text-white text-xl">全部</h1>
       </NuxtLink>
     </div>
   </header>

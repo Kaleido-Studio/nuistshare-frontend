@@ -1,5 +1,5 @@
 <script setup>
-import 'tdesign-vue-next/es/style/index.css';
+import "tdesign-vue-next/es/style/index.css";
 </script>
 
 <template>
@@ -17,7 +17,13 @@ body {
 
 html {
   font-family: "Source Han Serif CN VF";
+  background-color: #f5f5f5;
 }
+
+a {
+  color: unset;
+}
+
 .title-font {
   font-family: "YouSheBiaoTiHei";
   font-weight: 500 !important;

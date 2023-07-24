@@ -10,8 +10,8 @@
       <div
         class="transition-all duration-300 px-10 py-2 bg-transparent backdrop-blur-8 rounded-full border-9! border-white! curser-pointer hover:bg-white/20 mt-10"
       >
-        <a href="#数学类" class="decoration-none text-white text-base"
-          >开始下载</a
+        <NuxtLink to="/entries" class="decoration-none text-white text-base"
+          >开始下载</NuxtLink
         >
       </div>
     </div>

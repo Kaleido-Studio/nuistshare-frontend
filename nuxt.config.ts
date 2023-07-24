@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["tdesign-vue-next/es/nuxt", "@unocss/nuxt"],
+  modules: ["tdesign-vue-next/es/nuxt", "@unocss/nuxt", "@nuxt/content"],
   app: {
     head: {
       link: [
@@ -19,5 +19,5 @@ export default defineNuxtConfig({
   build: {
     // extractCSS: true,
     transpile: ["tdesign-vue-next"],
-  }
+  },
 });
