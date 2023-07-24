@@ -12,7 +12,7 @@
     "
   >
     <div class="flex h-full flex-col justify-center items-center">
-      <h4 class="text-black title-font text-8xl tracking-[0.5rem] leading-1">
+      <h4 class="text-black title-font lg:text-8xl sm:text-5xl text-6xl tracking-[0.5rem] wrap">
         分享并获得学习资料
       </h4>
       <form class="b-1 pt-6">

@@ -2,11 +2,13 @@
 import { SearchIcon } from "tdesign-icons-vue-next";
 const { data: res } = await useAsyncData("res", () => queryContent("/").find());
 const { treeList, fin } = transformData(res.value);
+const isSmallScreen = useMediaQuery("(max-width: 640px)");
 
 const currentPage = ref(1);
 const searchKeyword = ref("");
 const l2_filter = ref([]);
 const keys = ref([]);
+const visible = ref(false);
 
 const fullListToRender = computed(() => {
   const key = searchKeyword.value;
@@ -50,8 +52,10 @@ watch(
 
 <template>
   <section class="" id="start">
-    <div class="flex flex-row justify-center items-begin gap-10 w-full p-10">
-      <div>
+    <div
+      class="flex flex-row justify-center items-begin gap-10 w-full sm:p-10 p-3"
+    >
+      <div class="sm:block hidden">
         <div class="h-auto bg-white p-8 rounded-xl">
           <TSpace class="py-4 flex flex-row items-center">
             <SearchIcon />
@@ -69,8 +73,29 @@ watch(
         </div>
       </div>
       <div
-        class="flex flex-col gap-5 min-w-2/3 sm:max-w-2/3 bg-[#eee] p-8 rounded-xl"
+        class="flex flex-col gap-5 min-w-2/3 sm:max-w-2/3 bg-[#eee] sm:p-8 p-2 rounded-xl"
       >
+        <TSpace
+          class="py-4 flex flex-row items-center justify-around p-3 lg:block hidden"
+        >
+          <SearchIcon />
+          <TInput v-model="searchKeyword" />
+          <ClientOnly>
+
+              <TButton @click="visible = true">筛选</TButton>
+              <TDrawer placement="bottom" v-model:visible="visible" size="78%">
+                <TTree
+                checkable
+                size="large"
+                :data="treeList"
+                v-model="l2_filter"
+                value-mode="onlyLeaf"
+                value-type="string"
+                />
+            </TDrawer>
+        </ClientOnly>
+        </TSpace>
+
         <TSpace
           break-line
           v-if="searchKeyword !== '' || l2_filter.length !== 0"
@@ -79,7 +104,6 @@ watch(
             theme="primary"
             variant="outline"
             size="large"
-            :key="i"
             closable
             v-if="searchKeyword"
             @close="handleClose('search')"
@@ -110,6 +134,7 @@ watch(
           :total="total"
           v-model="currentPage"
           :show-page-size="false"
+          :theme="isSmallScreen ? 'simple' : 'default'"
         />
       </div>
     </div>

@@ -6,6 +6,8 @@ const props = defineProps({
   L2: String,
 });
 
+const isSmallScreen = useMediaQuery("(max-width: 640px)");
+
 const firstTarget = props.target[0];
 
 const visible = ref(false);
@@ -57,21 +59,21 @@ const download = async () => {
 </script>
 
 <template>
+  <ClientOnly>
   <TCard
     :bordered="false"
     class="drop-shadow-lg hover:translate-y--1 transition-transform! duration-200!"
   >
     <div class="flex flex-row justify-between items-center">
       <div>
-        <p class="text-[20px]">
+        <p class="sm:text-[20px] text-base">
           {{ name }}
         </p>
-        <p class="text-[16px]">{{ L1 }} {{ " | " }} {{ L2 }}</p>
+        <p class="sm:text-[16px] text-sm">{{ L1 }} {{ " | " }} {{ L2 }}</p>
       </div>
-      <TButton size="large" @click="refreshInfo">下载</TButton>
+      <TButton :size="isSmallScreen?`medium`:`large`" @click="refreshInfo">下载</TButton>
     </div>
   </TCard>
-  <ClientOnly>
     <TDrawer
       placement="bottom"
       v-model:visible="visible"

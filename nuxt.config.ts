@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ["tdesign-vue-next/es/nuxt", "@unocss/nuxt", "@nuxt/content"],
+  modules: ["tdesign-vue-next/es/nuxt", "@unocss/nuxt", "@nuxt/content","@vueuse/nuxt"],
   app: {
     head: {
       link: [
