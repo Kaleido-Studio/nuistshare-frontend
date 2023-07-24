@@ -8,7 +8,10 @@ defineProps({
 </script>
 
 <template>
-  <TCard :bordered="false" hover-shadow>
+  <TCard
+    :bordered="false"
+    class="drop-shadow-lg hover:translate-y--1 transition-transform! duration-200!"
+  >
     <p class="text-[1.1rem]">
       {{ name }}
     </p>

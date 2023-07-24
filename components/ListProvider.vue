@@ -1,49 +1,27 @@
 <script setup>
 import { SearchIcon } from "tdesign-icons-vue-next";
 const { data: res } = await useAsyncData("res", () => queryContent("/").find());
-const fin = [];
-const initMapping = {};
-res.value.forEach((item) => {
-  const { _file } = item;
-  const [l1_title, l2_title] = _file
-    .split("/")
-    .map((a) => a.replace(".json", ""));
-
-  if (initMapping[l1_title]) {
-    initMapping[l1_title].push(l2_title);
-  } else {
-    initMapping[l1_title] = [l2_title];
-  }
-
-  item.body.forEach((list_item) => {
-    const { title, target } = list_item;
-    fin.push({
-      title,
-      target,
-      l1_title,
-      l2_title,
-    });
-  });
-});
-
-const treeList = [];
-for (const l1_title in initMapping) {
-  const children = initMapping[l1_title].map((l2_title) => ({
-    value: l2_title,
-    label: l2_title,
-  }));
-  treeList.push({
-    value: l1_title,
-    label: l1_title,
-    children,
-  });
-}
+const { treeList, fin } = transformData(res.value);
 
 const currentPage = ref(1);
+const searchKeyword = ref("");
+const l2_filter = ref([]);
+const keys = ref({});
 
 const fullListToRender = computed(() => {
-  const a = true;
-  return fin.filter(() => true);
+  const key = searchKeyword.value;
+  return fin
+    .filter(
+      (a) =>
+        searchKeyword === "" ||
+        a.title.includes(key) ||
+        a.l1_title.includes(key) ||
+        a.l2_title.includes(key)
+    )
+    .filter(
+      (a) =>
+        l2_filter.value.length === 0 || l2_filter.value.includes(a.l2_title)
+    );
 });
 
 const total = computed(() => fullListToRender.value.length);
@@ -53,6 +31,10 @@ const currentList = computed(() => {
   const end = currentPage.value * 10;
   return fullListToRender.value.slice(start, end);
 });
+
+const handleChange = (e) => {
+  l2_filter.value = e;
+};
 </script>
 
 <template>
@@ -64,13 +46,23 @@ const currentList = computed(() => {
         <div class="h-auto bg-white p-8 rounded-xl">
           <TSpace class="py-4 flex flex-row items-center">
             <SearchIcon />
-            <TInput />
+            <TInput v-model="searchKeyword" />
           </TSpace>
 
-          <TTree checkable size="large" :data="treeList" />
+          <TTree
+            checkable
+            size="large"
+            :data="treeList"
+            :keys="keys"
+            value-mode="onlyLeaf"
+            value-type="string"
+            @change="handleChange"
+          />
         </div>
       </div>
       <div class="flex flex-col gap-5 min-w-2/3 bg-[#eee] p-8 rounded-xl">
+        {{ l2_filter }}
+        <p>总共: {{ fin.length }}, 筛选后 {{ fullListToRender.length }}</p>
         <SingleEntry
           v-for="i in currentList"
           :name="i.title"
