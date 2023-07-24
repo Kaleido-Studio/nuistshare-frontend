@@ -1,4 +1,6 @@
 <template>
   <NsHero />
-  <NsSectionOne />
+  <div class="container mx-auto">
+    <ListProvider />
+  </div>
 </template>

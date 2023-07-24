@@ -3,28 +3,25 @@
     class="w-full h-screen text-center col-span-4 bg-cover bg-no-repeat bg-left"
     style="
       background: linear-gradient(
-          rgba(4, 25, 69, 0.4) 100%,
-          rgba(0, 0, 0, 0.4) 100%
+          to top,
+          #f6f6f6 0%,
+          rgba(255, 255, 255, 0.4) 100%
         ),
-        url('/back.jpg');
+        url('/back.png');
       background-size: cover, cover;
     "
   >
     <div class="flex h-full flex-col justify-center items-center">
-      <h4 class="text-white title-font text-8xl tracking-[0.5rem] leading-1">
+      <h4 class="text-black title-font text-8xl tracking-[0.5rem] leading-1">
         分享并获得学习资料
       </h4>
-      <div class="b-3 border-[#fff] mt-10">
-        <div
-          class="transition-all duration-300 px-10 py-2 bg-[#ffffff20] backdrop-blur-8 rounded-full border-1 border-white! curser-pointer hover:bg-white/20"
+      <form class="b-1 pt-6">
+        <button
+          class="transition-all duration-300 px-10 text-white py-2 text-xl bg-[#171717] hover:bg-transparent hover:text-black rounded-[0.5rem] border-2 border-gray-600"
         >
-          <NuxtLink
-            to="/entries"
-            class="decoration-none text-white text-2xl title-font"
-            >开始下载</NuxtLink
-          >
-        </div>
-      </div>
+          <a href="#start" class="decoration-none font-bold">开始下载</a>
+        </button>
+      </form>
     </div>
   </section>
 </template>

@@ -6,7 +6,7 @@ const { treeList, fin } = transformData(res.value);
 const currentPage = ref(1);
 const searchKeyword = ref("");
 const l2_filter = ref([]);
-const keys = ref({});
+const keys = ref([]);
 
 const fullListToRender = computed(() => {
   const key = searchKeyword.value;
@@ -32,15 +32,24 @@ const currentList = computed(() => {
   return fullListToRender.value.slice(start, end);
 });
 
-const handleChange = (e) => {
-  l2_filter.value = e;
+const handleClose = (e) => {
+  if (e === "search") {
+    searchKeyword.value = "";
+    return;
+  }
+  l2_filter.value = l2_filter.value.filter((a) => a !== e);
+  currentPage.value = 1;
 };
+watch(
+  () => searchKeyword.value,
+  () => {
+    currentPage.value = 1;
+  }
+);
 </script>
 
 <template>
-  <br />
-  <!-- {{ res[0] }} -->
-  <section class="mt-30">
+  <section class="" id="start">
     <div class="flex flex-row justify-center items-begin gap-10 w-full p-10">
       <div>
         <div class="h-auto bg-white p-8 rounded-xl">
@@ -53,23 +62,55 @@ const handleChange = (e) => {
             checkable
             size="large"
             :data="treeList"
-            :keys="keys"
+            v-model="l2_filter"
             value-mode="onlyLeaf"
             value-type="string"
-            @change="handleChange"
           />
         </div>
       </div>
-      <div class="flex flex-col gap-5 min-w-2/3 bg-[#eee] p-8 rounded-xl">
-        {{ l2_filter }}
+      <div
+        class="flex flex-col gap-5 min-w-2/3 sm:max-w-2/3 bg-[#eee] p-8 rounded-xl"
+      >
+        <TSpace
+          break-line
+          v-if="searchKeyword !== '' || l2_filter.length !== 0"
+        >
+          <TTag
+            theme="primary"
+            variant="outline"
+            size="large"
+            :key="i"
+            closable
+            v-if="searchKeyword"
+            @close="handleClose('search')"
+          >
+            搜索：{{ searchKeyword }}
+          </TTag>
+          <TTag
+            v-for="i in l2_filter"
+            theme="primary"
+            variant="outline"
+            size="large"
+            :key="i"
+            closable
+            @close="handleClose(i)"
+          >
+            {{ i }}
+          </TTag>
+        </TSpace>
         <p>总共: {{ fin.length }}, 筛选后 {{ fullListToRender.length }}</p>
         <SingleEntry
           v-for="i in currentList"
           :name="i.title"
           :L1="i.l1_title"
           :L2="i.l2_title"
+          :target="i.target"
         />
-        <TPagination :total="total" v-model="currentPage" />
+        <TPagination
+          :total="total"
+          v-model="currentPage"
+          :show-page-size="false"
+        />
       </div>
     </div>
   </section>
