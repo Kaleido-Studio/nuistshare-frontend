@@ -1,6 +1,6 @@
 <script setup>
-import "tdesign-vue-next/es/style/index.css";
-import "./styles/theme.css";
+import 'tdesign-vue-next/es/style/index.css'
+import './styles/theme.css'
 </script>
 
 <template>

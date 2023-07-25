@@ -1,27 +1,25 @@
 export default defineEventHandler(async (event) => {
-  const meta = getQuery(event);
-  let [link, type] = ["", ""];
+  const meta = getQuery(event)
+  let [link, type] = ['', '']
   for (const q in meta) {
     switch (q) {
-      case "link": {
-        // @ts-expect-error
-        link = decodeURIComponent(meta["link"]);
-        break;
+      case 'link': {
+        link = decodeURIComponent(meta.link as string)
+        break
       }
-      case "type": {
-        // @ts-expect-error
-        type = decodeURIComponent(meta["type"]);
-        break;
+      case 'type': {
+        type = decodeURIComponent(meta.type as string)
+        break
       }
     }
   }
-  if (type === "cloudreve") {
-    const hash = link.split("/").pop();
+  if (type === 'cloudreve') {
+    const hash = link.split('/').pop()
     const res = await fetch(
-      `https://imon.agentwei.cn/api/v3/share/info/${hash}`
-    );
-    return await res.json();
+      `https://imon.agentwei.cn/api/v3/share/info/${hash}`,
+    )
+    return await res.json()
   }
   //   console.log(targetUrl);
-  return "Hello World";
-});
+  return 'Hello World'
+})

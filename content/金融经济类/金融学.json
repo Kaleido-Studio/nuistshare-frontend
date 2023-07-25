@@ -1,1 +1,24 @@
-[{"title": "金融学ppt.zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/KbQUB"}]}, {"title": "金融选择删减版.docx", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/EGjUB"}]}]
+{
+  "data": [
+    {
+      "title": "金融学ppt.zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/KbQUB",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "金融选择删减版.docx",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/EGjUB",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

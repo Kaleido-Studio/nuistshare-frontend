@@ -1,128 +1,144 @@
-[
+{
+  "data": [
     {
-        "title": "大学物理下册练习题-答案.pdf",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/s/LzJin"
-            }
-        ]
+      "title": "大学物理下册练习题-答案.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/LzJin",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理学习指导与练习1-9章.pdf",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/s/nmzcD"
-            }
-        ]
+      "title": "大学物理学习指导与练习1-9章.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/nmzcD",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理课件（上）.rar",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/K95FB"
-            }
-        ]
+      "title": "大学物理课件（上）.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/K95FB",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理习题册（上册）.pdf",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/mz0I8"
-            }
-        ]
+      "title": "大学物理习题册（上册）.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/mz0I8",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理习题册（下册）.pdf",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/x4dtY"
-            }
-        ]
+      "title": "大学物理习题册（下册）.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/x4dtY",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理试卷（下）.rar",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/yr9cM"
-            }
-        ]
+      "title": "大学物理试卷（下）.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/yr9cM",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理总复习.ppt",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/dvbH6"
-            }
-        ]
+      "title": "大学物理总复习.ppt",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/dvbH6",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大物课件.rar",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/s/7bYS2"
-            }
-        ]
+      "title": "大物课件.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/7bYS2",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "期中试卷-定稿-20211018-2.pdf",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/s/QODFW"
-            }
-        ]
+      "title": "期中试卷-定稿-20211018-2.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/QODFW",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理课件（下）.rar",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/Em7uB"
-            }
-        ]
+      "title": "大学物理课件（下）.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/Em7uB",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理习题答案（上）.rar",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/DvKCj"
-            }
-        ]
+      "title": "大学物理习题答案（上）.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/DvKCj",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理试卷（上）.rar",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/NBrsL"
-            }
-        ]
+      "title": "大学物理试卷（上）.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/NBrsL",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理2（上）复习提纲.ppt",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/4mgtk"
-            }
-        ]
+      "title": "大学物理2（上）复习提纲.ppt",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/4mgtk",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     },
     {
-        "title": "大学物理下册-复习提纲.pdf",
-        "target": [
-            {
-                "type": "cloudreve",
-                "link": "https://imon.agentwei.cn/#/s/Z05hl"
-            }
-        ]
+      "title": "大学物理下册-复习提纲.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/Z05hl",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
     }
-]
+  ]
+}

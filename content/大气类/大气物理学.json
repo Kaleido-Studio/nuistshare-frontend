@@ -1,1 +1,44 @@
-[{"title": "大气物理学讲义", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/J8KFv"}]}, {"title": "大气物理学题库(1).docx", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/g6khx"}]}, {"title": "大气物理学题库", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/qZ1sO"}]}, {"title": "大气物理学题库_参考答案.docx", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/br6FQ"}]}]
+{
+  "data": [
+    {
+      "title": "大气物理学讲义",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/J8KFv",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "大气物理学题库(1).docx",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/g6khx",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "大气物理学题库",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/qZ1sO",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "大气物理学题库_参考答案.docx",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/br6FQ",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

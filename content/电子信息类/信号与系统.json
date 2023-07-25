@@ -1,1 +1,64 @@
-[{"title": "信号与系统教材.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/6XACl"}]}, {"title": "信号与系统PPT.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/YlZfX"}]}, {"title": "信号与系统实验.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/2KlhZ"}]}, {"title": "信号与系统习题答案.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/zA0u4"}]}, {"title": "信号与系统知识点与复习.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/wqLfK"}]}, {"title": "奥本海姆信号与系统第2版上册笔记和课后习题含考研真题详解答案.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/0pbsR"}]}]
+{
+  "data": [
+    {
+      "title": "信号与系统教材.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/6XACl",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "信号与系统PPT.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/YlZfX",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "信号与系统实验.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/2KlhZ",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "信号与系统习题答案.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/zA0u4",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "信号与系统知识点与复习.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/wqLfK",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "奥本海姆信号与系统第2版上册笔记和课后习题含考研真题详解答案.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/0pbsR",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

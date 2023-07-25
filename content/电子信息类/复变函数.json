@@ -1,1 +1,64 @@
-[{"title": "复变函数课件.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/YlbsX"}]}, {"title": "复变与积分变换.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/zA1C4"}]}, {"title": "复变函数复习纲要.doc", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/qL1tO"}]}, {"title": "复变函数与积分变换PPT.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/Wygh1"}]}, {"title": "复变函数知识点.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/2KpiZ"}]}, {"title": "复变函数试题.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/WG6f1"}]}]
+{
+  "data": [
+    {
+      "title": "复变函数课件.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/YlbsX",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "复变与积分变换.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/zA1C4",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "复变函数复习纲要.doc",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/qL1tO",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "复变函数与积分变换PPT.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/Wygh1",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "复变函数知识点.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/2KpiZ",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "复变函数试题.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/WG6f1",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

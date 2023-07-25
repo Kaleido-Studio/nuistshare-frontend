@@ -1,1 +1,14 @@
-[{"title": "Javaweb课件", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/Dr6Cj"}]}]
+{
+  "data": [
+    {
+      "title": "Javaweb课件",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/Dr6Cj",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

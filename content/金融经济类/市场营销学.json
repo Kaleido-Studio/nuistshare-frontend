@@ -1,1 +1,24 @@
-[{"title": "市场营销.docx", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/mmqS8"}]}, {"title": "市场营销学试题库.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/Dd6uj"}]}]
+{
+  "data": [
+    {
+      "title": "市场营销.docx",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/mmqS8",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "市场营销学试题库.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/Dd6uj",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

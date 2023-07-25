@@ -1,1 +1,54 @@
-[{"title": "《电磁场与电磁波》谢处方.第四版.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/GnXcv"}]}, {"title": "电磁场课件.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/67ATl"}]}, {"title": "电磁场教材及答案.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/YzZUX"}]}, {"title": "电磁场试卷.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/20lcZ"}]}, {"title": "电磁场重点及公式.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/z40i4"}]}]
+{
+  "data": [
+    {
+      "title": "《电磁场与电磁波》谢处方.第四版.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/GnXcv",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "电磁场课件.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/67ATl",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "电磁场教材及答案.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/YzZUX",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "电磁场试卷.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/20lcZ",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "电磁场重点及公式.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/z40i4",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

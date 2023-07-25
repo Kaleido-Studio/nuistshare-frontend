@@ -1,1 +1,24 @@
-[{"title": "中国天气复习课件及知识点", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/WR1u1"}]}, {"title": "中国天气试题答案", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/wbLUK"}]}]
+{
+  "data": [
+    {
+      "title": "中国天气复习课件及知识点",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/WR1u1",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "中国天气试题答案",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/wbLUK",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

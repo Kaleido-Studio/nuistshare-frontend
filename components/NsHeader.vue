@@ -1,10 +1,10 @@
 <script setup>
-const route = useRoute();
+// const route = useRoute()
 
-const color = computed(() => {
-  const isHomePage = route.path === "/";
-  return isHomePage ? "text-white" : "text-black";
-});
+// const color = computed(() => {
+//   const isHomePage = route.path === '/'
+//   return isHomePage ? 'text-white' : 'text-black'
+// })
 </script>
 
 <template>
@@ -16,8 +16,9 @@ const color = computed(() => {
       <NuxtLink
         to="/"
         class="overlay no-underline! tracking-[0.1rem] title-font text-black decoration-none sm:text-3xl text-2xl"
-        >Nuistshare</NuxtLink
       >
+        Nuistshare
+      </NuxtLink>
     </h1>
   </header>
 </template>

@@ -1,1 +1,44 @@
-[{"title": "数电PPT.zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/1z4uN"}]}, {"title": "数字电子技术基础简明教程.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/6vASl"}]}, {"title": "数电往年期末试卷.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/rRzhy"}]}, {"title": "数电试卷.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/RKQs7"}]}]
+{
+  "data": [
+    {
+      "title": "数电PPT.zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/1z4uN",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数字电子技术基础简明教程.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/6vASl",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数电往年期末试卷.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/rRzhy",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数电试卷.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/RKQs7",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

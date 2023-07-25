@@ -1,1 +1,74 @@
-[{"title": "数据库系统概论 第5版_完整版 PDF电子书.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/5jOSw"}]}, {"title": "数据库课件.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/6d1cl"}]}, {"title": "总复习.ppt", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/YAbtX"}]}, {"title": "数据库复习.zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/NxzUL"}]}, {"title": "数据库实验报告及期中练习.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/2jpHZ"}]}, {"title": "数据库练习及答案.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/zD1s4"}]}, {"title": "数据库基础教程[电子教案].zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/VlATm"}]}]
+{
+  "data": [
+    {
+      "title": "数据库系统概论 第5版_完整版 PDF电子书.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/5jOSw",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数据库课件.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/6d1cl",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "总复习.ppt",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/YAbtX",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数据库复习.zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/NxzUL",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数据库实验报告及期中练习.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/2jpHZ",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数据库练习及答案.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/zD1s4",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "数据库基础教程[电子教案].zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/VlATm",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

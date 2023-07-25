@@ -1,1 +1,74 @@
-[{"title": "模电课件.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/Gdpuv"}]}, {"title": "模拟电子技术 郭业才教材答案.zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/Rk2T7"}]}, {"title": "模拟电子线路.zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/eRyiw"}]}, {"title": "模拟电子技术基础简明教程第三版（杨素行）习题答案.pdf", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/5LnTw"}]}, {"title": "模电历年期中试卷.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/7RGc2"}]}, {"title": "模电历年试卷.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/59nhw"}]}, {"title": "模电习题集.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/07bcR"}]}]
+{
+  "data": [
+    {
+      "title": "模电课件.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/Gdpuv",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "模拟电子技术 郭业才教材答案.zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/Rk2T7",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "模拟电子线路.zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/eRyiw",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "模拟电子技术基础简明教程第三版（杨素行）习题答案.pdf",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/5LnTw",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "模电历年期中试卷.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/7RGc2",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "模电历年试卷.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/59nhw",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "模电习题集.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/07bcR",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

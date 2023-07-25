@@ -1,1 +1,44 @@
-[{"title": "Java课件", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/1RRuN"}]}, {"title": "code.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/r0RIy"}]}, {"title": "Java语言程序设计题库7套.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/G5NCv"}]}, {"title": "2015-2016（1）Java语言期末考试B卷.doc", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/e5Lhw"}]}]
+{
+  "data": [
+    {
+      "title": "Java课件",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/1RRuN",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "code.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/r0RIy",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "Java语言程序设计题库7套.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/G5NCv",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "2015-2016（1）Java语言期末考试B卷.doc",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/e5Lhw",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,34 @@
-[{"title": "OJ部分代码合辑.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/dbc6"}]}, {"title": "LevOJ.rar", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/s/bk6tQ"}]}, {"title": "百科园.zip", "target": [{"type": "cloudreve", "link": "https://imon.agentwei.cn/#/s/Z5tl"}]}]
+{
+  "data": [
+    {
+      "title": "OJ部分代码合辑.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/dbc6",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "LevOJ.rar",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/s/bk6tQ",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    },
+    {
+      "title": "百科园.zip",
+      "target": [
+        {
+          "type": "cloudreve",
+          "link": "https://imon.agentwei.cn/#/s/Z5tl",
+          "label": "Infinity 的 OneDrive"
+        }
+      ]
+    }
+  ]
+}

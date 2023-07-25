@@ -1,57 +1,60 @@
-<script setup>
-import { SearchIcon } from "tdesign-icons-vue-next";
-const { data: res } = await useAsyncData("res", () => queryContent("/").find());
-const { treeList, fin } = transformData(res.value);
-const isSmallScreen = useMediaQuery("(max-width: 640px)");
+<script setup lang="ts">
+import { SearchIcon } from 'tdesign-icons-vue-next'
 
-const currentPage = ref(1);
-const searchKeyword = ref("");
-const l2_filter = ref([]);
-const keys = ref([]);
-const visible = ref(false);
+const isSmallScreen = useMediaQuery('(max-width: 640px)')
+
+const { data: { value } } = await useAsyncData('res', () => queryContent('/').find(), {
+  transform: transformData,
+})
+const { treeList, fin } = value!
+
+const currentPage = ref(1)
+const searchKeyword = ref('')
+const l2_filter = ref<string[]>([])
+const visible = ref(false)
 
 const fullListToRender = computed(() => {
-  const key = searchKeyword.value;
+  const key = searchKeyword.value
   return fin
     .filter(
-      (a) =>
-        searchKeyword === "" ||
-        a.title.includes(key) ||
-        a.l1_title.includes(key) ||
-        a.l2_title.includes(key)
+      a =>
+        key === ''
+        || a.title.includes(key)
+        || a.l1_title.includes(key)
+        || a.l2_title.includes(key),
     )
     .filter(
-      (a) =>
-        l2_filter.value.length === 0 || l2_filter.value.includes(a.l2_title)
-    );
-});
+      a =>
+        l2_filter.value.length === 0 || l2_filter.value.includes(a.l2_title),
+    )
+})
 
-const total = computed(() => fullListToRender.value.length);
+const total = computed(() => fullListToRender.value.length)
 
 const currentList = computed(() => {
-  const start = (currentPage.value - 1) * 10;
-  const end = currentPage.value * 10;
-  return fullListToRender.value.slice(start, end);
-});
+  const start = (currentPage.value - 1) * 10
+  const end = currentPage.value * 10
+  return fullListToRender.value.slice(start, end)
+})
 
-const handleClose = (e) => {
-  if (e === "search") {
-    searchKeyword.value = "";
-    return;
+function handleClose(e: string) {
+  if (e === 'search') {
+    searchKeyword.value = ''
+    return
   }
-  l2_filter.value = l2_filter.value.filter((a) => a !== e);
-  currentPage.value = 1;
-};
+  l2_filter.value = l2_filter.value.filter(a => a !== e)
+  currentPage.value = 1
+}
 watch(
   () => searchKeyword.value,
   () => {
-    currentPage.value = 1;
-  }
-);
+    currentPage.value = 1
+  },
+)
 </script>
 
 <template>
-  <section class="" id="start">
+  <section id="start" class="">
     <div
       class="flex flex-row justify-center items-begin gap-10 w-full sm:p-10 p-3"
     >
@@ -63,10 +66,10 @@ watch(
           </TSpace>
 
           <TTree
+            v-model="l2_filter"
             checkable
             size="large"
             :data="treeList"
-            v-model="l2_filter"
             value-mode="onlyLeaf"
             value-type="string"
           />
@@ -81,41 +84,42 @@ watch(
           <SearchIcon />
           <TInput v-model="searchKeyword" />
           <ClientOnly>
-
-              <TButton @click="visible = true">筛选</TButton>
-              <TDrawer placement="bottom" v-model:visible="visible" size="78%">
-                <TTree
+            <TButton @click="visible = true">
+              筛选
+            </TButton>
+            <TDrawer v-model:visible="visible" placement="bottom" size="78%">
+              <TTree
+                v-model="l2_filter"
                 checkable
                 size="large"
                 :data="treeList"
-                v-model="l2_filter"
                 value-mode="onlyLeaf"
                 value-type="string"
-                />
+              />
             </TDrawer>
-        </ClientOnly>
+          </ClientOnly>
         </TSpace>
 
         <TSpace
-          break-line
           v-if="searchKeyword !== '' || l2_filter.length !== 0"
+          break-line
         >
           <TTag
+            v-if="searchKeyword"
             theme="primary"
             variant="outline"
             size="large"
             closable
-            v-if="searchKeyword"
             @close="handleClose('search')"
           >
             搜索：{{ searchKeyword }}
           </TTag>
           <TTag
             v-for="i in l2_filter"
+            :key="i"
             theme="primary"
             variant="outline"
             size="large"
-            :key="i"
             closable
             @close="handleClose(i)"
           >
@@ -125,14 +129,15 @@ watch(
         <p>总共: {{ fin.length }}, 筛选后 {{ fullListToRender.length }}</p>
         <SingleEntry
           v-for="i in currentList"
+          :key="i.title"
           :name="i.title"
-          :L1="i.l1_title"
-          :L2="i.l2_title"
+          :l1="i.l1_title"
+          :l2="i.l2_title"
           :target="i.target"
         />
         <TPagination
-          :total="total"
           v-model="currentPage"
+          :total="total"
           :show-page-size="false"
           :theme="isSmallScreen ? 'simple' : 'default'"
         />
