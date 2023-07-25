@@ -15,11 +15,33 @@ export default defineEventHandler(async (event) => {
   }
   if (type === 'cloudreve') {
     const hash = link.split('/').pop()
+    const domainName = link.split('/')[2]
     const res = await fetch(
-      `https://imon.agentwei.cn/api/v3/share/info/${hash}`,
+      `https://${domainName}/api/v3/share/info/${hash}`,
     )
-    return await res.json()
+    const { data } = await res.json()
+    try {
+      const {
+        downloads: downloadCount,
+        views: viewCount,
+        createDate: lastUpdated,
+        source: { size },
+      } = data
+      return {
+        msg: 'success',
+        data: { downloadCount, viewCount, lastUpdated, size },
+      }
+    }
+    catch {
+      return {
+        msg: 'error',
+        data: { downloadCount: undefined, viewCount: undefined, lastUpdated: undefined, size: undefined },
+      }
+    }
   }
   //   console.log(targetUrl);
-  return 'Hello World'
+  return {
+    msg: 'error',
+    data: { downloadCount: undefined, viewCount: undefined, lastUpdated: undefined, size: undefined },
+  }
 })
