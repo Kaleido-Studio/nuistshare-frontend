@@ -1,7 +1,7 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   name: String,
-  target: Object as PropType<[]>,
+  target: Object as PropType<{ type: string; label: string; link: string }[]>,
   l1: String,
   l2: String,
 })
@@ -32,11 +32,10 @@ const visible = ref(false)
       </div>
     </TCard>
     <EntryPopup
+      v-model="visible"
       :target="target"
       :name="name"
-      v-model="visible"
-      ></EntryPopup>
-    
+    />
   </ClientOnly>
 </template>
 

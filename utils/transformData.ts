@@ -10,7 +10,7 @@ interface TreeNode {
 function transformData(res: any) {
   const fin = [] as {
     title: string
-    target: string
+    target: { link: string; type: string; label: string }[]
     l1_title: string
     l2_title: string
   }[]
@@ -20,6 +20,14 @@ function transformData(res: any) {
     const [l1_title, l2_title] = _file
       .split('/')
       .map((a: string) => a.replace('.json', ''))
+      .map((a: string) => {
+        const isSplitFound = a.includes('.')
+        if (isSplitFound) {
+          const [_, l2] = a.split('.')
+          return l2
+        }
+        return a
+      })
 
     if (initMapping[l1_title])
       initMapping[l1_title].push(l2_title)

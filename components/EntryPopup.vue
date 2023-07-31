@@ -7,42 +7,32 @@ const props = defineProps({
 const isVisible = defineModel()
 const options = props.target?.map(i => ({ label: i.label, value: i })) ?? []
 
-const currentTarget = ref(props.target?.[0] ?? {})
+const currentSource = ref(options[0])
 
-const info = await useAsyncData('info', async () => {
-  return isVisible
-    ? {}
-    : {
-        downloadCount: 0,
-        viewCount: 0,
-        lastUpdated: '',
-        size: '',
-      }
-})
-async function fetchInfo() {
-  const { data } = useFetch('/api/getInfo', {
-    method: 'GET',
-    query: {
-      type: 'cloudreve',
-      link: encodeURIComponent(firstTarget.link),
-    },
-  })
+const info = {
+  downloadCount: 0,
+  viewCount: 0,
+  lastUpdated: '',
+  size: '',
 }
 
 function preview() {
-  window.open(firstTarget.link)
+  const { link } = currentSource.value.value
+  if (link)
+    window.open(link)
 }
 
 async function download() {
+  const { link, type } = currentSource.value.value
   const { data } = await useFetch('/api/getDownload', {
     method: 'GET',
     query: {
-      type: 'cloudreve',
-      link: encodeURIComponent(firstTarget.link),
+      link,
+      type,
     },
   })
-  const target = data.value.data
-  window.open(target)
+  if (data.value.data)
+    window.open(data.value.data)
 }
 </script>
 
@@ -51,6 +41,7 @@ async function download() {
     v-model:visible="isVisible"
     placement="bottom"
     size="50%"
+    :destroy-on-close="true"
     :show-in-attached-element="false"
   >
     <template #header>
@@ -70,7 +61,8 @@ async function download() {
         <h3>大小 {{ info.size }}</h3>
       </div>
       <TSpace v-if="target?.length !== 0" direction="vertical">
-        <TSelect :options="options" :value="" value-type="object" />
+        <h3>选择下载源</h3>
+        <TSelect :options="options" :value="currentSource" value-type="object" />
         <TButton
           size="large"
           class="w-[10rem]"
