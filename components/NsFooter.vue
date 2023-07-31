@@ -1,0 +1,34 @@
+<template>
+  <footer class="bg-[#f0f0f0] py-10">
+    <div class="flex lg:flex-col flex-row px-10 text-center">
+      <div
+        class="w-1/2 sm:flex sm:items-center sm:justify-center sm:w-full [&>*]:px-3"
+      >
+        <h3 class="text-base font-bold">
+          一些组织
+        </h3>
+        <a href="https://www.dh.org.cn/" target="_blank" class="m-2 block">DH互联网工作室</a>
+        <a href="http://www.nuistceee.cn/" target="_blank" class="m-1 block">CEEE</a>
+      </div>
+      <div
+        class="w-1/2 sm:flex sm:items-center sm:justify-center sm:w-full [&>*]:px-3"
+      >
+        <h3 class="text-base font-bold">
+          友情链接
+        </h3>
+        <a href="http://www.dustella.net" target="_blank" class="m-2 block">Dustella</a>
+        <a href="https://nav.agentwei.cn/" target="_blank" class="m-1 block">Infinity 导航</a>
+      </div>
+    </div>
+    <div class="text-center m-1">
+      由 <a href="https://www.dustella.net"> Dustella</a>
+      开发, under AGPL 3.0
+    </div>
+    <div class="text-center m-1">
+      文件存储于 Infinity 的 OneDrive
+    </div>
+    <div class="text-center m-1">
+      所有资料由 InfinityWei，John Lu 提供 严禁商用
+    </div>
+  </footer>
+</template>
