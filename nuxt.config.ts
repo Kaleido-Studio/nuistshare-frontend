@@ -9,11 +9,11 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://unpkg.com/@chinese-fonts/syst@1.3.0/dist/SourceHanSerifCN/result.css',
+          href: 'https://testingcf.jsdelivr.net/npm/@chinese-fonts/syst@1.3.0/dist/SourceHanSerifCN/result.css',
         },
         {
           rel: 'stylesheet',
-          href: 'https://unpkg.com/@chinese-fonts/ysbth@1.1.0/dist/优设标题黑/result.css',
+          href: 'https://testingcf.jsdelivr.net/npm/@chinese-fonts/ysbth@1.1.0/dist/优设标题黑/result.css',
         },
       ],
     },
@@ -24,5 +24,10 @@ export default defineNuxtConfig({
   },
   vue: {
     defineModel: true,
+  },
+  nitro: {
+    compressPublicAssets: {
+      brotli: true,
+    },
   },
 })
