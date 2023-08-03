@@ -17,7 +17,7 @@ body {
 }
 
 html {
-  font-family: "Source Han Serif CN VF";
+  font-family: "MiSans Regular";
   background-color: #f5f5f5;
   scroll-behavior: smooth;
 }
@@ -33,5 +33,6 @@ a {
 .title-font {
   font-family: "YouSheBiaoTiHei";
   font-weight: 500 !important;
+  text-wrap: balance;
 }
 </style>

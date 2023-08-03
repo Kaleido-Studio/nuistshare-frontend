@@ -35,6 +35,7 @@ const visible = ref(false)
       v-model="visible"
       :target="target"
       :name="name"
+      size="65%"
     />
   </ClientOnly>
 </template>

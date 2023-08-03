@@ -64,7 +64,7 @@ const [DefineFilterTree, FilterTree] = createReusableTemplate()
 
   <section id="start" class="">
     <div
-      class="flex flex-row justify-center items-begin gap-10 w-full sm:p-10 p-3"
+      class="flex flex-row justify-center items-begin gap-10 w-full"
     >
       <div class="sm:block hidden">
         <div class="h-auto bg-white p-8 rounded-xl">
