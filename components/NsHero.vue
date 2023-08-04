@@ -7,7 +7,7 @@
           #f6f6f6 0%,
           rgba(255, 255, 255, 0.4) 100%
         ),
-        url('/back.png');
+        url('https://nuistshare-cdn.dustella.net/fonts//back.png');
       background-size: cover, cover;
     "
   >
@@ -18,6 +18,7 @@
       <form class="b-1 pt-6">
         <button
           class="transition-all duration-300 px-10 text-white py-2 text-xl bg-[#171717] hover:bg-transparent hover:text-black rounded-[0.5rem] border-2 border-gray-600"
+          @click.prevent
         >
           <NuxtLink to="/entries" class="decoration-none font-bold">
             开始下载

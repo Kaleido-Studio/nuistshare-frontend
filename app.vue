@@ -17,7 +17,7 @@ body {
 }
 
 html {
-  font-family: "MiSans Regular";
+  font-family: "MiSans";
   background-color: #f5f5f5;
   scroll-behavior: smooth;
 }
@@ -34,5 +34,11 @@ a {
   font-family: "YouSheBiaoTiHei";
   font-weight: 500 !important;
   text-wrap: balance;
+}
+
+::selection{
+  background-color: rgb(75, 75, 75);
+  color: #f5f5f5;
+  border-radius: 5px;
 }
 </style>
