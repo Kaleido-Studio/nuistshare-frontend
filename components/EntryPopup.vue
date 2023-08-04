@@ -1,39 +1,17 @@
 <script setup lang="ts">
-const props = defineProps({
-  target: Object as PropType<{ link: string; label: string; type: string }[]>,
-  name: String,
-})
+import type { Archive } from 'types/Archives'
+
+const props = defineProps<{ item: Archive }>()
 
 const isVisible = defineModel()
-const options = props.target?.map(i => ({ label: i.label, value: i })) ?? []
 
-const currentSource = ref(options[0])
+const data = unref(props.item)
+const metadata = data.metadata.map(item => ({
+  label: item.label,
+  value: item.id,
+}))
 
-const info = {
-  downloadCount: 0,
-  viewCount: 0,
-  lastUpdated: '',
-  size: '',
-}
-
-function preview() {
-  const { link } = currentSource.value.value
-  if (link)
-    window.open(link)
-}
-
-async function download() {
-  const { link, type } = currentSource.value.value
-  const { data } = await useFetch('/api/getDownload', {
-    method: 'GET',
-    query: {
-      link,
-      type,
-    },
-  })
-  if (data.value.data)
-    window.open(data.value.data)
-}
+const currentSource = ref(metadata[0].value)
 </script>
 
 <template>
@@ -51,28 +29,39 @@ async function download() {
     <div class="flex flex-col h-full items-center text-center justify-around">
       <div>
         <h1 class="text-black text-center text-2xl">
-          {{ name }}
+          {{ data?.name }}
         </h1>
         <h3>
-          下载量 {{ info.downloadCount }} {{ ", " }}浏览量
-          {{ info.viewCount }}
+          下载量 {{ data?.viewCount }} {{ ", " }}浏览量
+          {{ data?.downloadCount }}
         </h3>
-        <h3>上次更新 {{ info.lastUpdated }}</h3>
-        <h3>大小 {{ info.size }}</h3>
+        <h3>
+          上次更新 {{ (new Date(data?.uploadTime ?? 0)).toLocaleString("zh-CN", {
+            hour12: false,
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }) }}
+        </h3>
+        <!-- <h3>大小 {{ data?.size }}</h3> -->
       </div>
-      <TSpace v-if="target?.length !== 0" direction="vertical">
+      <TSpace v-if="data?.metadata?.length !== 0" direction="vertical">
         <h3>选择下载源</h3>
-        <TSelect :options="options" :value="currentSource" value-type="object" />
+        <TSelect v-model="currentSource" :options="metadata" />
         <TButton
           size="large"
           class="w-[10rem]"
           variant="outline"
-          @click="preview"
         >
-          预览
+          <a href="#" target="_blank">
+            预览
+          </a>
         </TButton>
-        <TButton size="large" class="w-[10rem]" @click="download">
-          现在下载
+        <TButton size="large" class="w-[10rem]">
+          <a :href="`https://api-nuistshare.dustella.net/api/download?metadata_id=${currentSource}`" download rel="noreferrer">
+            立即下载
+          </a>
         </TButton>
       </TSpace>
       <TImage v-else src="/empty.svg" />

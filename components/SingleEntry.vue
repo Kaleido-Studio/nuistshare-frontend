@@ -1,10 +1,9 @@
 <script setup lang="ts">
-defineProps({
-  name: String,
-  target: Object as PropType<{ type: string; label: string; link: string }[]>,
-  l1: String,
-  l2: String,
-})
+import type { Archive } from 'types/Archives'
+
+defineProps<{
+  archive: Archive
+}>()
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)')
 
@@ -20,10 +19,10 @@ const visible = ref(false)
       <div class="flex flex-row justify-between items-center">
         <div>
           <p class="sm:text-[20px] text-base">
-            {{ name }}
+            {{ archive.name }}
           </p>
           <p class="sm:text-[16px] text-sm">
-            {{ l1 }} {{ " | " }} {{ l2 }}
+            {{ archive.l1Class }} {{ " | " }} {{ archive.l2Class }}
           </p>
         </div>
         <TButton :size="isSmallScreen ? `medium` : `large`" @click="visible = true">
@@ -33,8 +32,7 @@ const visible = ref(false)
     </TCard>
     <EntryPopup
       v-model="visible"
-      :target="target"
-      :name="name"
+      :item="archive"
       size="65%"
     />
   </ClientOnly>

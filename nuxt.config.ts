@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@nuxt/content', '@vueuse/nuxt'],
+  modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@vueuse/nuxt'],
   app: {
     cdnURL: `${process.env.bucketDomain}/nuistshare-assets/`,
     head: {
@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     defineModel: true,
   },
   vite: {
-    plugins: [vitePluginQiniuOss(process.env.NODE_ENV === 'production')],
+    plugins: [vitePluginQiniuOss(process.env.publishToCDN === 'true')],
   },
   nitro: {
     compressPublicAssets: {
