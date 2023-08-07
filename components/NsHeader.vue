@@ -29,29 +29,38 @@ function openMenu() {
 <template>
   <ClientOnly>
     <header
-      class="z-255 flex flex-row items-center border-b-gray-300  border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 bg-white/20 backdrop-blur top-0"
+      class="z-255 flex flex-row items-center border-b-gray-300  border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 shadow drop-shadow-2xl bg-[#f0f0f099]! backdrop-blur top-0"
     >
       <!-- create a title and a search bar -->
       <TIcon v-if="isSmallScreen" size="large" name="view-list" @click="openMenu" />
       <h1 class="sm:m-4 m-1 align-middle">
         <NuxtLink
           to="/"
-          class="align-middle overlay no-underline! tracking-[0.1rem] title-font text-black decoration-none sm:text-3xl text-2xl"
+          class="align-middle title-font overlay no-underline! tracking-[0.1rem]  text-black decoration-none sm:text-4xl text-2xl"
         >
           Nuistshare
         </NuxtLink>
       </h1>
       <TIcon v-if="isSmallScreen" size="large" name="user" />
 
-      <TSpace v-if="!isSmallScreen">
+      <TSpace v-if="!isSmallScreen" align="center" size="3rem">
         <NuxtLink
           v-for="i in links"
           :key="i.title"
           :to="i.path"
-          class="overlay no-underline! tracking-[0.1rem] title-font text-gray-600 decoration-none sm:text-2xl text-xl transition-all duration-300 hover:text-black"
+          class="overlay tracking-[0.1rem] title-font  text-gray-600 decoration-none sm:text-[1.7rem] text-[1rem] transition-all duration-300 hover:text-black"
         >
           {{ i.title }}
         </NuxtLink>
+        <TSpace>
+          <TButton
+            class="text-xl"
+            size="large"
+            @click="$router.push('login')"
+          >
+            登陆
+          </TButton>
+        </TSpace>
       </TSpace>
     </header>
     <TDrawer v-model:visible="visable" placement="top" :destroy-on-close="true">
@@ -65,11 +74,17 @@ function openMenu() {
       <p v-for="i in links" :key="i.title">
         <NuxtLink
           :to="i.path"
-          class="overlay no-underline! tracking-[0.1rem] title-font text-gray-600 decoration-none sm:text-2xl text-xl transition-all duration-300 hover:text-black"
+          class="decoration-none tracking-[0.1rem] title-font text-gray-600  sm:text-2xl text-xl transition-all duration-300 hover:text-black"
         >
           {{ i.title }}
         </NuxtLink>
       </p>
+      <NuxtLink
+        to="login"
+        class="decoration-none tracking-[0.1rem] title-font text-gray-600  sm:text-2xl text-xl transition-all duration-300 hover:text-black"
+      >
+        登陆
+      </NuxtLink>
     </TDrawer>
   </ClientOnly>
 </template>
@@ -77,6 +92,13 @@ function openMenu() {
 <style scoped>
 .router-link-exact-active {
   color: black;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 5px;
+}
+
+.router-link{
+  font-family: '', Courier, monospace !important;
+  font-weight: 600 !important;
 }
 </style>

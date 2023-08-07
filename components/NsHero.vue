@@ -9,6 +9,7 @@
         ),
         url('https://nuistshare-cdn.dustella.net/fonts//back.png');
       background-size: cover, cover;
+      background-position: right,right;
     "
   >
     <div class="flex h-full flex-col justify-center items-center">

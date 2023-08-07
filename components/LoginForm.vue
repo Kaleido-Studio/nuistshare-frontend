@@ -7,6 +7,7 @@ import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
 const formData = reactive({
   email: '',
   password: '',
+  remember: false,
 })
 
 const form = ref(null)
@@ -43,10 +44,10 @@ function onSubmit(context: SubmitContext) {
 </script>
 
 <template>
-  <TCard shadow class="max-w-[700px] mx-auto ">
+  <div shadow class="mx-auto max-w-[980px] sm:min-w-[300px]">
     <t-form ref="form" :data="formData" :colon="true" :label-width="0" @reset="onReset" @submit="onSubmit">
       <t-form-item name="email">
-        <t-input v-model="formData.email" clearable placeholder="请输入账户名">
+        <t-input v-model="formData.email" size="large" clearable placeholder="请输入账户名">
           <template #prefix-icon>
             <DesktopIcon />
           </template>
@@ -54,18 +55,42 @@ function onSubmit(context: SubmitContext) {
       </t-form-item>
 
       <t-form-item name="password">
-        <t-input v-model="formData.password" type="password" clearable placeholder="请输入密码">
+        <t-input v-model="formData.password" size="large" type="password" clearable placeholder="请输入密码">
           <template #prefix-icon>
             <LockOnIcon />
           </template>
         </t-input>
       </t-form-item>
 
+      <t-form-item class="">
+        <div class="flex justify-between w-full flex-row">
+          <t-checkbox v-model="formData.remember" size="large">
+            记住我
+          </t-checkbox>
+          <!-- forget password -->
+          <NuxtLink class="float-right" to="/forget-password">
+            忘记密码
+          </NuxtLink>
+        </div>
+      </t-form-item>
+
       <t-form-item>
-        <t-button theme="primary" type="submit" block>
+        <t-button size="large" theme="primary" type="submit" block>
           登录
         </t-button>
       </t-form-item>
+
+      <t-form-item>
+        <div class="w-full text-base">
+          <NuxtLink to="/register">
+            注册
+          </NuxtLink>
+        </div>
+      </t-form-item>
     </t-form>
-  </TCard>
+    <TDivider>或者使用第三方账号</TDivider>
+    <div>
+      <TIcon size="30px" name="logo-github-filled" />
+    </div>
+  </div>
 </template>
