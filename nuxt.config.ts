@@ -10,6 +10,8 @@ export default defineNuxtConfig({
   },
   modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@vueuse/nuxt'],
   app: {
+    ssr: false,
+    prerender: true,
     cdnURL: `${process.env.bucketDomain}/nuistshare-assets/`,
     head: {
       title: 'Nuistshare',

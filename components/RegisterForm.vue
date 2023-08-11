@@ -7,6 +7,8 @@ import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
 const formData = reactive({
   email: '',
   password: '',
+  name: '',
+  remember: false,
 })
 
 const form = ref(null)
@@ -15,7 +17,7 @@ function onReset() {
   MessagePlugin.success('重置成功')
 }
 
-async function doLogin() {
+async function doRegister() {
   const { email, password } = formData
   const { data } = await useApi<{ access_token: string }>('/api/login', {
     method: 'POST',
@@ -35,7 +37,7 @@ async function doLogin() {
 function onSubmit(context: SubmitContext) {
   const { validateResult, firstError } = context
   if (validateResult === true)
-    doLogin()
+    doRegister()
 
   else
     MessagePlugin.warning(firstError!)
@@ -46,7 +48,15 @@ function onSubmit(context: SubmitContext) {
   <div shadow class="mx-auto max-w-[980px] sm:min-w-[300px]">
     <t-form ref="form" :data="formData" :colon="true" :label-width="0" @reset="onReset" @submit="onSubmit">
       <t-form-item name="email">
-        <t-input v-model="formData.email" clearable placeholder="请输入账户名">
+        <t-input v-model="formData.email" size="large" clearable placeholder="请输入你的邮件">
+          <template #prefix-icon>
+            <DesktopIcon />
+          </template>
+        </t-input>
+      </t-form-item>
+
+      <t-form-item name="name">
+        <t-input v-model="formData.name" size="large" clearable placeholder="请输入账户名">
           <template #prefix-icon>
             <DesktopIcon />
           </template>
@@ -54,7 +64,7 @@ function onSubmit(context: SubmitContext) {
       </t-form-item>
 
       <t-form-item name="password">
-        <t-input v-model="formData.password" type="password" clearable placeholder="请输入密码">
+        <t-input v-model="formData.password" size="large" type="password" clearable placeholder="请输入密码">
           <template #prefix-icon>
             <LockOnIcon />
           </template>
@@ -62,10 +72,22 @@ function onSubmit(context: SubmitContext) {
       </t-form-item>
 
       <t-form-item>
-        <t-button theme="primary" type="submit" block>
-          登录
+        <t-button size="large" theme="primary" type="submit" block>
+          注册
         </t-button>
       </t-form-item>
+
+      <t-form-item>
+        <div class="w-full text-base">
+          <NuxtLink to="/login">
+            已经有账户了？去登陆
+          </NuxtLink>
+        </div>
+      </t-form-item>
     </t-form>
+    <TDivider>或者使用第三方账号</TDivider>
+    <div>
+      <TIcon size="30px" name="logo-github-filled" />
+    </div>
   </div>
 </template>

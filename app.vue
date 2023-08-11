@@ -1,6 +1,23 @@
 <script setup>
 import 'tdesign-vue-next/es/style/index.css'
 import './styles/theme.css'
+
+onBeforeMount(async () => {
+  // this is essential to make request sent at client side
+  // should be a bug of nuxt
+  await nextTick()
+  const login = useLogin()
+  const user = useUser()
+  const token = localStorage.getItem('token')
+  if (token) {
+    const id = getUserId(token)
+    login.value.userId = id
+    login.value.lsLoggedIn = true
+    login.value.token = token
+    const res = await useApi('/api/users/me')
+    user.value = res.data.value
+  }
+})
 </script>
 
 <template>

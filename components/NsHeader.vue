@@ -17,6 +17,9 @@ const links = [
   },
 ]
 
+const login = useLogin()
+const user = useUser()
+
 const visable = ref(false)
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)')
@@ -52,15 +55,19 @@ function openMenu() {
         >
           {{ i.title }}
         </NuxtLink>
-        <TSpace>
+        <TSpace v-if="!login.lsLoggedIn">
           <TButton
             class="text-xl"
             size="large"
+            shape="round"
             @click="$router.push('login')"
           >
             登陆
           </TButton>
         </TSpace>
+        <div v-else>
+          <HeaderDropdown />
+        </div>
       </TSpace>
     </header>
     <TDrawer v-model:visible="visable" placement="top" :destroy-on-close="true">
@@ -79,12 +86,19 @@ function openMenu() {
           {{ i.title }}
         </NuxtLink>
       </p>
-      <NuxtLink
-        to="login"
-        class="decoration-none tracking-[0.1rem] title-font text-gray-600  sm:text-2xl text-xl transition-all duration-300 hover:text-black"
-      >
-        登陆
-      </NuxtLink>
+      <div v-if="!login.lsLoggedIn">
+        <NuxtLink
+          to="login"
+          class="decoration-none tracking-[0.1rem] title-font text-gray-600  sm:text-2xl text-xl transition-all duration-300 hover:text-black"
+        >
+          登陆
+        </NuxtLink>
+      </div>
+      <div v-else>
+        <TAvatar
+          :image="`https://api-nuistshare.dustella.net/api/users/${login.userId}/avatar`"
+        />
+      </div>
     </TDrawer>
   </ClientOnly>
 </template>
