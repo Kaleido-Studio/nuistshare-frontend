@@ -4,14 +4,19 @@ import { MessagePlugin } from 'tdesign-vue-next'
 const user = useUser()
 
 async function change(type: string) {
-  const body = {}
-  body[type] = user.value[type]
-  const res = await useApi('/api/users/me', {
+  const body = {} as any
+  body[type] = (user.value as any)[type]
+  const res = await useApi<{ id: number }>('/api/users/me', {
     method: 'PUT',
     body,
   })
+  if (res.data.value?.id)
+    MessagePlugin.success('成功修改信息')
+
+  else
+    MessagePlugin.error('修改信息失败')
+
   // message ok
-  MessagePlugin.success('成功修改信息')
 }
 </script>
 
@@ -21,11 +26,11 @@ async function change(type: string) {
       我的信息
     </h1>
     <TDivider />
-    <InfoCard title="用户名" description="请你在这里修改你的用户名">
-      <TInput v-model="user.nickname" size="" @click="change('nickname')" />
+    <InfoCard title="用户名" description="请你在这里修改你的用户名" @submit="change('name')">
+      <TInput v-model="user.name" size="" />
     </InfoCard>
-    <InfoCard title="邮箱" description="请你在这里修改你的邮件">
-      <TInput v-model="user.email" size="" @click="change('email')" />
+    <InfoCard title="邮箱" description="请你在这里修改你的邮件" @submit="change('email')">
+      <TInput v-model="user.email" size="" />
     </InfoCard>
     <InfoCard title="密码" description="请谨慎修改密码" button-red />
   </div>

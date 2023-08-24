@@ -18,7 +18,6 @@ const links = [
 ]
 
 const login = useLogin()
-const user = useUser()
 
 const visable = ref(false)
 
@@ -36,10 +35,10 @@ function openMenu() {
     >
       <!-- create a title and a search bar -->
       <TIcon v-if="isSmallScreen" size="large" name="view-list" @click="openMenu" />
-      <h1 class="sm:m-4 m-1 align-middle">
+      <h1 class="sm:m-3 m-1 ">
         <NuxtLink
           to="/"
-          class="align-middle title-font overlay no-underline! tracking-[0.1rem]  text-black decoration-none sm:text-4xl text-2xl"
+          class="title-font overlay no-underline! tracking-[0.1rem]  text-black decoration-none sm:text-3xl text-2xl"
         >
           Nuistshare
         </NuxtLink>
@@ -51,7 +50,7 @@ function openMenu() {
           v-for="i in links"
           :key="i.title"
           :to="i.path"
-          class="overlay tracking-[0.1rem] title-font  text-gray-600 decoration-none sm:text-[1.7rem] text-[1rem] transition-all duration-300 hover:text-black"
+          class="overlay tracking-[0.1rem] title-font  text-gray-600 decoration-none sm:text-2xl text-xl transition-all duration-300 hover:text-black"
         >
           {{ i.title }}
         </NuxtLink>

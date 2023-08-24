@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{ title: string; buttonRed?: boolean; description: string }>()
-defineEmits(['click'])
+defineEmits(['submit'])
 </script>
 
 <template>
@@ -14,7 +14,7 @@ defineEmits(['click'])
     </div>
     <template #footer>
       <div class="w-full flex justify-end flex-row">
-        <TButton shape="round" size="" :theme="buttonRed ? 'danger' : 'primary'" @click="$emit('click')">
+        <TButton shape="round" size="" :theme="buttonRed ? 'danger' : 'primary'" @click="$emit('submit')">
           修改
         </TButton>
       </div>

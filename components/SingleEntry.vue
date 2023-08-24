@@ -28,7 +28,7 @@ const visible = ref(false)
           {{ `浏览量 ${archive.viewCount} 下载量 ${archive.downloadCount}` }}
         </p>
       </div>
-      <TButton v-if="!isSmallScreen" :size="isSmallScreen ? `medium` : `large`" @click.stop="visible = true">
+      <TButton v-if="!isSmallScreen" :size="isSmallScreen ? `medium` : `large`" @click.stop="$router.push(`/details?id=${archive.id}`)">
         下载
       </TButton>
     </div>
