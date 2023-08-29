@@ -34,7 +34,7 @@ body {
 }
 
 html {
-  font-family: "MiSans";
+  font-family: "PingFang SC";
   background-color: #f5f5f5;
   scroll-behavior: smooth;
 }

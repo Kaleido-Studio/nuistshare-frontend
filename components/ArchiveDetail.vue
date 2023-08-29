@@ -26,13 +26,15 @@ const metadata = computed(() => {
         <NuxtLink class="text-gray-600 cursor-pointer hover-underline " @click="$router.back()">
           返回上一级
         </NuxtLink>
-        {{ " >> " }} {{ data.l1Class }} {{ " / " }} {{ data.l2Class }} {{ " / " }} {{ data.type }}
       </div>
       <h3 class="text-2xl">
         {{ data.name }}
       </h3>
+      <p class="mt--2">
+        {{ " >> " }}         {{ data.l1Class }} {{ " / " }} {{ data.l2Class }} {{ " / " }} {{ data.type }}
+      </p>
     </div>
-    <TSpace class="text-gray-600 " align="center">
+    <div class="text-gray-600 flex flex-row gap-3 items-center mt--2 text-[0.9rem]" align="center">
       <p>
         {{ data.downloadCount }} 次下载 <DownloadIcon />
       </p>
@@ -42,10 +44,10 @@ const metadata = computed(() => {
       <p>
         {{ data.viewCount }} 次浏览 <Filter3Icon />
       </p>
-    </TSpace>
+    </div>
     <div>
       <h3>下载</h3>
-      <div v-for="i in metadata" :key="i.value" class="bg-white drop-shadow hover:shadow transition-all p-3 px-6 my-3 rounded-xl flex justify-between items-center">
+      <div v-for="i in metadata" :key="i.value" class=" flex flex-col sm:flex-row bg-white drop-shadow hover:shadow transition-all p-3 px-6 my-3 rounded-xl flex justify-between items-center">
         <p>源：{{ i.label }}</p>
         <TSpace>
           <TButton variant="outline" tag="a" :href="`https://api-nuistshare.dustella.net/api/download?metadata_id=${i.value}`" download>

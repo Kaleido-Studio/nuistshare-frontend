@@ -35,3 +35,10 @@ defineEmits(['someClose'])
     </TTag>
   </TSpace>
 </template>
+
+<style scoped>
+:deep(.t-tag--outline){
+  background-color: white;
+  border: 0;
+}
+</style>

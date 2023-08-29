@@ -6,7 +6,7 @@
     --td-brand-color-hover: var(--td-brand-color-8);
     --td-brand-color: var(--td-brand-color-9);
     --td-brand-color-active: var(--td-brand-color-10);
-    --td-brand-color-1: #f6f6f6;
+    --td-brand-color-1: #f2f2f2;
     --td-brand-color-2: #e5e5e5;
     --td-brand-color-3: #cbcbcb;
     --td-brand-color-4: #afafaf;
@@ -101,8 +101,8 @@
     --td-font-gray-3: rgba(0, 0, 0, 0.4);
     --td-font-gray-4: rgba(0, 0, 0, 0.26);
     /* 字体配置 */
-    --td-font-family: "MiSans";
-    --td-font-family-medium: "MiSans Medium";
+    --td-font-family: "PingFang SC";
+    --td-font-family-medium: "PingFang SC";
     --td-font-size-link-small: 12px;
     --td-font-size-link-medium: 14px;
     --td-font-size-link-large: 16px;

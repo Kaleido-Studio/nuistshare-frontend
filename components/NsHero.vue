@@ -21,7 +21,7 @@
           class="transition-all duration-300 px-10 text-white py-2 text-xl bg-[#171717] hover:bg-transparent hover:text-black rounded-[0.5rem] border-2 border-gray-600"
           @click.prevent
         >
-          <NuxtLink to="/entries" class="decoration-none font-bold">
+          <NuxtLink to="/archives/entries" class="decoration-none font-bold">
             开始下载
           </NuxtLink>
         </button>

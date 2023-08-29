@@ -36,6 +36,10 @@ watch(
 )
 
 const [DefineFilterTree, FilterTree] = createReusableTemplate()
+
+watch(currentPage, () => {
+  window.scrollTo(0, 0)
+})
 </script>
 
 <template>
@@ -83,7 +87,7 @@ const [DefineFilterTree, FilterTree] = createReusableTemplate()
 
         <TagList :search-keyword="searchKeyword" :l2-filter="l2_filter" @some-close="handleClose" />
 
-        <p> 筛选后 {{ archiveList?.data.length }} 条记录</p>
+        <p> 筛选后 {{ archiveList?.totalItems }} 条记录, 第 {{ currentPage }} 页</p>
 
         <SingleEntry
           v-for="i in archiveList?.data"

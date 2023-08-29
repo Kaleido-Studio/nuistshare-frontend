@@ -11,7 +11,7 @@ const user = useUser()
       <TDropdownItem>
         <div>
           <h3 class="w-70">
-            Email: {{ user.email }}
+            Welcome!
           </h3>
         </div>
       </TDropdownItem>
@@ -20,8 +20,13 @@ const user = useUser()
       </TDropdownItem>
       <TDropdownItem>
         <NuxtLink to="/user/profile" class="text-base decoration-none">
-          Info
+          我的信息
         </NuxtLink>
+      </TDropdownItem>
+      <TDropdownItem>
+        <div class="text-base decoration-none">
+          登出
+        </div>
       </TDropdownItem>
     </TDropdownMenu>
   </TDropdown>
