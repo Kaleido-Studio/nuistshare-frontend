@@ -1,8 +1,6 @@
 <script setup>
 const user = useUser()
 
-const visable = ref(false)
-
 function logout() {
   window.localStorage.clear()
   location.href = '/auth/login'

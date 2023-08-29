@@ -23,6 +23,11 @@ const login = useLogin()
             资料下载
           </NuxtLink>
         </TMenuItem>
+        <TMenuItem value="/apps/entries">
+          <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active">
+            软件下载
+          </NuxtLink>
+        </TMenuItem>
         <template #operations>
           <TSpace v-if="!login.lsLoggedIn">
             <NuxtLink to="/login">
