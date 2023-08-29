@@ -4,9 +4,11 @@ import { MessagePlugin } from 'tdesign-vue-next'
 const user = useUser()
 const imageFile = ref([])
 
-const { data: { value: { uploadToken } } } = await useApi<{ uploadToken: string }>('/api/upload/token', {
+const { data } = await useApi<{ uploadToken: string }>('/api/upload/token', {
   method: 'GET',
 })
+
+const uploadToken = data.value?.uploadToken
 
 async function change(type: string) {
   const body = {} as any
@@ -61,12 +63,7 @@ async function change(type: string) {
             },
           })
         }"
-      >
-        <!-- custom UI -->
-        <!-- <template #fileListDisplay="{ files }">
-          <div>{{ JSON.stringify(files) }}</div>
-        </template> -->
-      </t-upload>
+      />
     </InfoCard>
     <InfoCard title="用户名" description="请你在这里修改你的用户名" icon="personal-information" @submit="change('name')">
       <TInput v-model="user.name" size="" />
@@ -74,7 +71,7 @@ async function change(type: string) {
     <InfoCard title="邮箱" description="请你在这里修改你的邮件" icon="mail" @submit="change('email')">
       <TInput v-model="user.email" size="" />
     </InfoCard>
-    <InfoCard title="密码" description="请谨慎修改密码" icon="user-unlocked" button-red />
+    <InfoCard title="密码" description="请谨慎修改密码" icon="user-unlocked" button-red @submit="$router.push('/auth/reset')" />
   </div>
 </template>
 

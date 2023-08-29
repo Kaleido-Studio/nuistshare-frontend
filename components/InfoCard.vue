@@ -29,13 +29,3 @@ defineEmits(['submit'])
     </div>
   </div>
 </template>
-
-<style scoped>
-:deep(.t-button__text){
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 7px;
-  font-size: 0.82rem;
-  padding-bottom: 5px;
-}
-</style>

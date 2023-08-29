@@ -1,31 +1,5 @@
 <script setup>
-// const route = useRoute()
-
-// const color = computed(() => {
-//   const isHomePage = route.path === '/'
-//   return isHomePage ? 'text-white' : 'text-black'
-// })
-
-const links = [
-  {
-    title: '主页',
-    path: '/',
-  },
-  {
-    title: '电子书和试卷',
-    path: '/archives/entries',
-  },
-]
-
 const login = useLogin()
-
-const visable = ref(false)
-
-const isSmallScreen = useMediaQuery('(max-width: 640px)')
-
-function openMenu() {
-  visable.value = true
-}
 </script>
 
 <template>
