@@ -25,11 +25,9 @@ async function doLogin() {
   if (data.value?.access_token) {
     MessagePlugin.success('登录成功')
     localStorage.setItem('token', data.value.access_token)
-    const login = useLogin()
-    login.value.lsLoggedIn = true
-    login.value.token = data.value.access_token
-    const router = useRouter()
-    router.push('/')
+    setTimeout(() => {
+      location.href = '/'
+    }, 3000)
   }
   else {
     MessagePlugin.error(`登录失败,${data.value}`)
@@ -71,7 +69,7 @@ function onSubmit(context: SubmitContext) {
             记住我
           </t-checkbox>
           <!-- forget password -->
-          <NuxtLink class="float-right" to="/forget-password">
+          <NuxtLink class="float-right" to="/auth/reset">
             忘记密码
           </NuxtLink>
         </div>
@@ -85,7 +83,7 @@ function onSubmit(context: SubmitContext) {
 
       <t-form-item>
         <div class="w-full text-base">
-          <NuxtLink to="/register">
+          <NuxtLink to="/auth/register">
             没有账户？去注册
           </NuxtLink>
         </div>

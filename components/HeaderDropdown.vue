@@ -1,5 +1,12 @@
 <script setup>
 const user = useUser()
+
+const visable = ref(false)
+
+function logout() {
+  window.localStorage.clear()
+  location.href = '/auth/login'
+}
 </script>
 
 <template>
@@ -7,7 +14,7 @@ const user = useUser()
     <TAvatar
       :image="`https://api-nuistshare.dustella.net/api/users/${user.id}/avatar`"
     />
-    <TDropdownMenu :min-column-width="288">
+    <TDropdownMenu :min-column-width="288" :hide-after-item-click="false" trigger="click">
       <TDropdownItem>
         <div>
           <h3 class="w-70">
@@ -24,9 +31,9 @@ const user = useUser()
         </NuxtLink>
       </TDropdownItem>
       <TDropdownItem>
-        <div class="text-base decoration-none">
+        <TButton class="w-full" @click="logout">
           登出
-        </div>
+        </TButton>
       </TDropdownItem>
     </TDropdownMenu>
   </TDropdown>

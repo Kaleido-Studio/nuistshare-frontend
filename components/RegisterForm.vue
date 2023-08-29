@@ -19,18 +19,19 @@ function onReset() {
 
 async function doRegister() {
   const { email, password } = formData
-  const { data } = await useApi<{ access_token: string }>('/api/login', {
+  const { data } = await useApi<{ access_token: string }>('/api/register', {
     method: 'POST',
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify({ email, password, username: formData.name }),
   })
   if (data.value?.access_token) {
-    MessagePlugin.success('登录成功')
+    MessagePlugin.success('注册成功')
     localStorage.setItem('token', data.value.access_token)
-    const router = useRouter()
-    router.push('/')
+    setTimeout(() => {
+      location.href = '/'
+    }, 3000)
   }
   else {
-    MessagePlugin.error(`登录失败,${data.value}`)
+    MessagePlugin.error(`注册失败,${data.value}`)
   }
 }
 
