@@ -9,27 +9,28 @@ const login = useLogin()
     >
       <THeadMenu>
         <template #logo>
-          <h2 class="title-font text-2xl">
+          <h2 class="title-font text-2xl flex flex-row gap-4">
+            <MenuToggle />
             Nuistshare
           </h2>
         </template>
-        <TMenuItem value="/">
+        <TMenuItem value="/" class="sm:block! hidden!">
           <NuxtLink to="/" exact-active-class="router-link-exact-active">
             主页
           </NuxtLink>
         </TMenuItem>
-        <TMenuItem value="/archives/entries">
+        <TMenuItem value="/archives/entries" class="sm:block! hidden!">
           <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active">
             资料下载
           </NuxtLink>
         </TMenuItem>
-        <TMenuItem value="/apps/entries">
+        <TMenuItem value="/apps/entries" class="sm:block! hidden!">
           <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active">
             软件下载
           </NuxtLink>
         </TMenuItem>
         <template #operations>
-          <TSpace v-if="!login.lsLoggedIn">
+          <TSpace v-if="!login.lsLoggedIn" class="sm:block! hidden!">
             <NuxtLink to="/login">
               <TButton>
                 登陆
@@ -42,7 +43,7 @@ const login = useLogin()
             </NuxtLink>
           </TSpace>
           <TSpace v-else>
-            <NuxtLink to="/archives/upload">
+            <NuxtLink to="/archives/upload" class="sm:block! hidden!">
               <TButton>
                 上传资料
               </TButton>
