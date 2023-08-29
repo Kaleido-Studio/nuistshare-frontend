@@ -25,6 +25,8 @@ async function change(type: string) {
 
   // message ok
 }
+
+const verifyMessage = user.value.verified ? '已验证' : '未验证，验证之后才可以上传'
 </script>
 
 <template>
@@ -33,6 +35,12 @@ async function change(type: string) {
       我的信息
     </h1>
     <TDivider />
+    <InfoCard
+      title="验证" :description="verifyMessage" icon="user-unlocked" :no-button="user.verified"
+      button-text="验证"
+      @submit="$router.push('/auth/verify')"
+    />
+
     <InfoCard no-button title="头像" description="上传以修改头像" icon="personal-information" @submit="change('name')">
       <t-upload
         v-model="imageFile"

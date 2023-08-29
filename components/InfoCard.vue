@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { IconFont } from 'tdesign-icons-vue-next'
 
-defineProps<{ title: string; buttonRed?: boolean; description: string;icon: string; noButton?: boolean }>()
+defineProps<{ title: string; buttonRed?: boolean; description: string;icon: string; noButton?: boolean; buttonText?: string }>()
 defineEmits(['submit'])
 </script>
 
@@ -23,7 +23,7 @@ defineEmits(['submit'])
       </div>
       <div v-if="!noButton" class="w-auto flex justify-end flex-row bg-[#f5f5f5] p-4">
         <TButton size="medium" :theme="buttonRed ? 'danger' : 'primary'" @click="$emit('submit')">
-          修改
+          {{ buttonText ?? "修改" }}
         </TButton>
       </div>
     </div>
