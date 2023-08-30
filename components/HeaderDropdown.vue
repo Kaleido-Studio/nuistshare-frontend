@@ -8,23 +8,29 @@ function logout() {
 </script>
 
 <template>
-  <TDropdown>
+  <TDropdown min-column-width="88px" max-column-width="900px">
     <TAvatar
       :image="`https://api-nuistshare.dustella.net/api/users/${user.id}/avatar`"
     />
-    <TDropdownMenu :min-column-width="288" :hide-after-item-click="false" trigger="click">
+    <TDropdownMenu placement="bottom-left" :hide-after-item-click="false" trigger="click">
       <TDropdownItem>
-        <div>
-          <h3 class="w-70">
-            Welcome!
-          </h3>
+        <div class="py-5 flex-row flex items-center w-90">
+          <TAvatar size="70px" :image="`https://api-nuistshare.dustella.net/api/users/${user.id}/avatar`" />
+          <div class="pl-5">
+            <p class="text-base text-black">
+              {{ user.name }}
+            </p>
+            <p class="text-base ">
+              {{ user.email }}
+            </p>
+          </div>
         </div>
       </TDropdownItem>
       <TDropdownItem>
         <TDivider />
       </TDropdownItem>
       <TDropdownItem>
-        <NuxtLink to="/user/profile" class="text-base decoration-none">
+        <NuxtLink to="/user/profile" class="text-base decoration-none w-full">
           我的信息
         </NuxtLink>
       </TDropdownItem>
@@ -36,3 +42,12 @@ function logout() {
     </TDropdownMenu>
   </TDropdown>
 </template>
+
+<style scoped>
+:deep(.t-dropdown){
+  width: 290px;
+}
+:deep(.t-dropdown__item-text){
+  overflow: visible;
+}
+</style>

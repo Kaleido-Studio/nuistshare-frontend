@@ -17,25 +17,23 @@ const visible = ref(false)
             </span>
           </h2>
         </template>
-        <TMenuItem value="/" class="sm:block! hidden!">
-          <NuxtLink to="/" exact-active-class="router-link-exact-active">
+        <div value="/" class="sm:block! hidden! pl-8 ">
+          <NuxtLink to="/" exact-active-class="router-link-exact-active" class="no-underline">
             主页
           </NuxtLink>
-        </TMenuItem>
-        <TMenuItem value="/archives/entries" class="sm:block! hidden!">
-          <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active">
+        </div>
+        <div value="/archives/entries" class="sm:block! hidden! pl-8 ">
+          <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active" class="no-underline">
             资料下载
           </NuxtLink>
-        </TMenuItem>
-        <TMenuItem value="/apps/entries" class="sm:block! hidden!">
-          <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active">
+        </div>
+        <div value="/apps/entries" class="sm:block! hidden! pl-8 ">
+          <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active" class="no-underline">
             软件下载
           </NuxtLink>
-        </TMenuItem>
+        </div>
         <template #operations>
-          <TSpace v-if="!login.lsLoggedIn" class="sm:block! hidden!">
-            <MenuToggle v-model="visible" />
-
+          <TSpace v-if="!login.lsLoggedIn" class="sm:flex! hidden!">
             <NuxtLink to="/login">
               <TButton>
                 登陆
@@ -47,15 +45,15 @@ const visible = ref(false)
               </TButton>
             </NuxtLink>
           </TSpace>
-          <TSpace v-else align="center">
-            <MenuToggle v-model="visible" />
-            <NuxtLink to="/archives/upload" class="sm:block! hidden!">
+          <TSpace v-else align="center" class="sm:flex! hidden!">
+            <NuxtLink to="/archives/upload">
               <TButton>
                 上传资料
               </TButton>
             </NuxtLink>
-            <HeaderDropdown class="sm:flex! hidden!" />
+            <HeaderDropdown />
           </TSpace>
+          <MenuToggle v-model="visible" />
         </template>
       </THeadMenu>
     </header>
@@ -71,6 +69,10 @@ const visible = ref(false)
   text-decoration-thickness: 2px!important;
   text-decoration-style: solid;
 }
+/* {
+  margin-left: 3px;
+} */
+
 :deep(.t-menu__item){
   font-size: 0.95rem;
   text-shadow:0.3px 0.3px 0.3px black;

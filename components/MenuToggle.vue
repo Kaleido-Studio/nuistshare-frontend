@@ -3,7 +3,7 @@ const value = defineModel()
 </script>
 
 <template>
-  <div class="menuToggle sm:hidden block">
+  <div class="menuToggle sm:hidden block w-9 ">
     <input v-model="value" type="checkbox">
     <span />
     <span />
@@ -15,8 +15,9 @@ const value = defineModel()
 .menuToggle {
   position: relative;
   top: 2px;
-  left:2px;
-  z-index: 1;
+  left:12px;
+  // px;
+  z-index: 3;
   -webkit-user-select: none;
   user-select: none;
   a {
