@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     enabled: true,
   },
   modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@vueuse/nuxt'],
+  ssr: false,
   app: {
     cdnURL: `${process.env.bucketDomain}/nuistshare-assets/`,
     head: {
@@ -21,10 +22,13 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Regular/result.css',
+          href: 'https://nuistshare-cdn.dustella.net/fonts/Pingfang-Regular/result.css',
         }, {
           rel: 'stylesheet',
-          href: 'https://nuistshare-cdn.dustella.net/fonts/MiSans-Medium/result.css',
+          href: 'https://nuistshare-cdn.dustella.net/fonts/Pingfang-Medium/result.css',
+        }, {
+          rel: 'stylesheet',
+          href: 'https://nuistshare-cdn.dustella.net/fonts/Pingfang-Semibold/result.css',
         }, {
           rel: 'stylesheet',
           href: 'https://nuistshare-cdn.dustella.net/fonts/ysbth/result.css',

@@ -1,82 +1,80 @@
 <script setup>
-// const route = useRoute()
-
-// const color = computed(() => {
-//   const isHomePage = route.path === '/'
-//   return isHomePage ? 'text-white' : 'text-black'
-// })
-
-const links = [
-  {
-    title: '主页',
-    path: '/',
-  },
-  {
-    title: '电子书和试卷',
-    path: '/entries',
-  },
-]
-
-const visable = ref(false)
-
-const isSmallScreen = useMediaQuery('(max-width: 640px)')
-
-function openMenu() {
-  visable.value = true
-}
+const login = useLogin()
+const visible = ref(false)
 </script>
 
 <template>
   <ClientOnly>
+    <MobileDropdown v-model="visible" />
     <header
-      class="z-255 flex flex-row items-center border-b-gray-300  border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 bg-white/20 backdrop-blur top-0"
+      class="z-255 flex flex-row items-center border-b-gray-300  border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 shadow drop-shadow bg-white backdrop-blur top-0"
     >
-      <!-- create a title and a search bar -->
-      <TIcon v-if="isSmallScreen" size="large" name="view-list" @click="openMenu" />
-      <h1 class="sm:m-4 m-1 align-middle">
-        <NuxtLink
-          to="/"
-          class="align-middle overlay no-underline! tracking-[0.1rem] title-font text-black decoration-none sm:text-3xl text-2xl"
-        >
-          Nuistshare
-        </NuxtLink>
-      </h1>
-      <TIcon v-if="isSmallScreen" size="large" name="user" />
-
-      <TSpace v-if="!isSmallScreen">
-        <NuxtLink
-          v-for="i in links"
-          :key="i.title"
-          :to="i.path"
-          class="overlay no-underline! tracking-[0.1rem] title-font text-gray-600 decoration-none sm:text-2xl text-xl transition-all duration-300 hover:text-black"
-        >
-          {{ i.title }}
-        </NuxtLink>
-      </TSpace>
+      <THeadMenu>
+        <template #logo>
+          <h2 class="title-font text-2xl flex flex-row gap-4 justify-around ">
+            <span>
+              Nuistshare
+            </span>
+          </h2>
+        </template>
+        <div value="/" class="sm:block! hidden! pl-8 ">
+          <NuxtLink to="/" exact-active-class="router-link-exact-active" class="no-underline">
+            主页
+          </NuxtLink>
+        </div>
+        <div value="/archives/entries" class="sm:block! hidden! pl-8 ">
+          <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active" class="no-underline">
+            资料下载
+          </NuxtLink>
+        </div>
+        <div value="/apps/entries" class="sm:block! hidden! pl-8 ">
+          <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active" class="no-underline">
+            软件下载
+          </NuxtLink>
+        </div>
+        <template #operations>
+          <TSpace v-if="!login.lsLoggedIn" class="sm:flex! hidden!">
+            <NuxtLink to="/login">
+              <TButton>
+                登陆
+              </TButton>
+            </NuxtLink>
+            <NuxtLink to="/register">
+              <TButton variant="outline">
+                注册
+              </TButton>
+            </NuxtLink>
+          </TSpace>
+          <TSpace v-else align="center" class="sm:flex! hidden!">
+            <NuxtLink to="/archives/upload">
+              <TButton>
+                上传资料
+              </TButton>
+            </NuxtLink>
+            <HeaderDropdown />
+          </TSpace>
+          <MenuToggle v-model="visible" />
+        </template>
+      </THeadMenu>
     </header>
-    <TDrawer v-model:visible="visable" placement="top" :destroy-on-close="true">
-      <template #header>
-        <h2 class="title-font">
-          Nuistshare
-        </h2>
-      </template>
-      <template #footer />
-
-      <p v-for="i in links" :key="i.title">
-        <NuxtLink
-          :to="i.path"
-          class="overlay no-underline! tracking-[0.1rem] title-font text-gray-600 decoration-none sm:text-2xl text-xl transition-all duration-300 hover:text-black"
-        >
-          {{ i.title }}
-        </NuxtLink>
-      </p>
-    </TDrawer>
   </ClientOnly>
 </template>
 
 <style scoped>
-.router-link-exact-active {
-  color: black;
-  text-decoration: none;
+:deep(.router-link-active){
+  color: #252525;
+  background-color: #ffffff;
+  text-decoration-line: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 2px!important;
+  text-decoration-style: solid;
+}
+/* {
+  margin-left: 3px;
+} */
+
+:deep(.t-menu__item){
+  font-size: 0.95rem;
+  text-shadow:0.3px 0.3px 0.3px black;
 }
 </style>
