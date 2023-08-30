@@ -22,7 +22,9 @@ onBeforeMount(async () => {
 
 <template>
   <NsHeader />
-  <NuxtPage />
+  <main>
+    <NuxtPage />
+  </main>
   <NsFooter />
 </template>
 

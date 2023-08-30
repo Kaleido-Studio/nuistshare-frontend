@@ -1,17 +1,20 @@
 <script setup>
 const login = useLogin()
+const visible = ref(false)
 </script>
 
 <template>
   <ClientOnly>
+    <MobileDropdown v-model="visible" />
     <header
       class="z-255 flex flex-row items-center border-b-gray-300  border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 shadow drop-shadow bg-white backdrop-blur top-0"
     >
       <THeadMenu>
         <template #logo>
-          <h2 class="title-font text-2xl flex flex-row gap-4">
-            <MenuToggle />
-            Nuistshare
+          <h2 class="title-font text-2xl flex flex-row gap-4 justify-around ">
+            <span>
+              Nuistshare
+            </span>
           </h2>
         </template>
         <TMenuItem value="/" class="sm:block! hidden!">
@@ -31,6 +34,8 @@ const login = useLogin()
         </TMenuItem>
         <template #operations>
           <TSpace v-if="!login.lsLoggedIn" class="sm:block! hidden!">
+            <MenuToggle v-model="visible" />
+
             <NuxtLink to="/login">
               <TButton>
                 登陆
@@ -42,13 +47,14 @@ const login = useLogin()
               </TButton>
             </NuxtLink>
           </TSpace>
-          <TSpace v-else>
+          <TSpace v-else align="center">
+            <MenuToggle v-model="visible" />
             <NuxtLink to="/archives/upload" class="sm:block! hidden!">
               <TButton>
                 上传资料
               </TButton>
             </NuxtLink>
-            <HeaderDropdown />
+            <HeaderDropdown class="sm:flex! hidden!" />
           </TSpace>
         </template>
       </THeadMenu>
