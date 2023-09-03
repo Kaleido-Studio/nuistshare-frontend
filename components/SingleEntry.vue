@@ -10,7 +10,7 @@ const visible = ref(false)
 
 <template>
   <div
-    class="bg-white p-3 px-6 rounded-xl drop-shadow-lg hover:translate-y--1 transition-transform! duration-200! cursor-pointer border-b-6 border-black"
+    class="bg-white p-3 px-6 rounded-xl drop-shadow-lg transform-gpu hover:translate-y--1 transition-transform! duration-200! cursor-pointer border-b-6 border-black"
     @click="$router.push(`/archives/details?id=${archive.id}`)"
   >
     <div class="flex flex-row justify-between items-center">
