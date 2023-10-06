@@ -1,8 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import process from 'node:process'
-
-// @ts-expect-error qiniu oss has no ts support
-import vitePluginQiniuOss from 'vite-plugin-qiniu-oss'
 
 export default defineNuxtConfig({
   devtools: {
@@ -11,7 +7,6 @@ export default defineNuxtConfig({
   modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@vueuse/nuxt'],
   ssr: false,
   app: {
-    cdnURL: `${process.env.bucketDomain}/nuistshare-assets/`,
     head: {
       title: 'Nuistshare',
       meta: [
@@ -42,9 +37,6 @@ export default defineNuxtConfig({
   },
   vue: {
     defineModel: true,
-  },
-  vite: {
-    plugins: [vitePluginQiniuOss(process.env.publishToCDN === 'true')],
   },
   nitro: {
     compressPublicAssets: {
