@@ -34,12 +34,12 @@ const visible = ref(false)
         </div>
         <template #operations>
           <TSpace v-if="!login.lsLoggedIn" class="sm:flex! hidden!">
-            <NuxtLink to="/login">
+            <NuxtLink to="/auth/login">
               <TButton>
                 登陆
               </TButton>
             </NuxtLink>
-            <NuxtLink to="/register">
+            <NuxtLink to="/auth/register">
               <TButton variant="outline">
                 注册
               </TButton>
