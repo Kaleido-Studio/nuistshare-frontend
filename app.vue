@@ -5,7 +5,16 @@ import './styles/theme.css'
 onBeforeMount(async () => {
   // this is essential to make request sent at client side
   // should be a bug of nuxt
+
   await nextTick()
+
+  const { host, protocol } = location
+  if (host === 'nuistshare.cn')
+    location.href = 'https://www.nuistshare.cn'
+
+  if (protocol === 'http:' && host !== 'localhost')
+    location.href = `https://${host}`
+
   const login = useLogin()
   const user = useUser()
   const token = localStorage.getItem('token')
