@@ -11,8 +11,8 @@ export default async <T>(path: string, options?: any) => {
       })),
     ...options,
   })
-  const data = res.data.value as any
-  if ((data.code === 401 || data.code === 403) && data.message === 'Token Invalid') {
+  const error = res.error.value?.data as any
+  if (error && error.message === 'Token Invalid') {
     MessagePlugin.warning('Login Expiered')
     localStorage.clear()
     location.reload()

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { SearchIcon } from 'tdesign-icons-vue-next'
 import type { Archive } from 'types/Archives'
 import type { TreeNode } from 'types/TreeNode'
 import TagList from './TagList.vue'
@@ -56,44 +55,46 @@ watch(currentPage, () => {
 
   <section id="start" class="">
     <div
+      class="py-4 min-w-2/3 sm:max-w-[980px] mx-auto flex-row items-center justify-around p-3  flex"
+    >
+      <SearchBar v-model="searchKeyword" class="" />
+      <ClientOnly>
+        <div class="sm:hidden block">
+          <TButton @click="visible = true">
+            筛选
+          </TButton>
+          <TDrawer v-model:visible="visible" placement="bottom" size="78%">
+            <FilterTree />
+          </TDrawer>
+        </div>
+      </ClientOnly>
+    </div>
+    <div
       class="flex flex-row justify-center items-begin gap-10 w-full"
     >
-      <div class="sm:block hidden">
+      <div class="sm:block hidden sticky">
         <div class="h-auto bg-white p-8 rounded-xl">
-          <TSpace class="py-4 flex flex-row items-center">
-            <SearchIcon />
-            <TInput v-model="searchKeyword" />
-          </TSpace>
+          筛选
+          <br>
           <FilterTree />
         </div>
       </div>
       <div
-        class="flex flex-col gap-5 min-w-2/3 sm:max-w-2/3 bg-[#eee] sm:p-8 p-2 rounded-xl"
+        class="flex flex-col gap-5 min-w-2/3 sm:max-w-2/3 bg-[white] sm:p-8 p-2 rounded-xl"
       >
-        <div
-          class="py-4  flex-row items-center justify-around p-3 xl:hidden flex"
-        >
-          <SearchIcon />
-          <TInput v-model="searchKeyword" />
-          <ClientOnly>
-            <TButton @click="visible = true">
-              筛选
-            </TButton>
-            <TDrawer v-model:visible="visible" placement="bottom" size="78%">
-              <FilterTree />
-            </TDrawer>
-          </ClientOnly>
-        </div>
-
         <TagList :search-keyword="searchKeyword" :l2-filter="l2_filter" @some-close="handleClose" />
 
-        <p> 筛选后 {{ archiveList?.totalItems }} 条记录, 第 {{ currentPage }} 页</p>
+        <p class="text-sm text-gray-600">
+          筛选后 {{ archiveList?.totalItems }} 条记录, 第 {{ currentPage }} 页
+        </p>
 
-        <SingleEntry
-          v-for="i in archiveList?.data"
-          :key="i.id"
-          :archive="i"
-        />
+        <div class="grid  grid-cols-1 sm:grid-cols-2 gap-2">
+          <SingleEntry
+            v-for="i in archiveList?.data"
+            :key="i.id"
+            :archive="i"
+          />
+        </div>
 
         <TPagination
           v-model="currentPage"
@@ -108,7 +109,8 @@ watch(currentPage, () => {
 
 <style scoped>
 :deep(.t-checkbox__label) {
-  font-size: 16px;
+  /* font-size: 16px; */
   line-height: 24px;
+  color: rgb(99, 99, 99);
 }
 </style>

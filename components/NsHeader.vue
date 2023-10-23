@@ -65,9 +65,10 @@ const visible = ref(false)
   color: #252525;
   background-color: #ffffff;
   text-decoration-line: underline;
-  text-underline-offset: 7px;
-  text-decoration-thickness: 2px!important;
+  text-underline-offset: 21px;
+  text-decoration-thickness: 3px!important;
   text-decoration-style: solid;
+  font-weight: 700;
 }
 /* {
   margin-left: 3px;
