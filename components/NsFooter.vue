@@ -15,8 +15,8 @@ const isSmallScreen = useMediaQuery('(max-width: 640px)')
             <h3 class="sm:text-base text-sm font-bold">
               一些组织
             </h3>
-            <a href="https://www.dh.org.cn/" target="_blank" class="my-2 text-gray-600 decoration-none block">DH互联网工作室</a>
-            <a href="http://www.nuistceee.cn/" target="_blank" class="my-1 text-gray-600 decoration-none block">CEEE</a>
+            <a href="https://www.duohuo.org.cn/" target="_blank" class="my-2 text-gray-600 decoration-none block">DH互联网工作室</a>
+            <a href="https://qm.qq.com/q/j33e43giyc" target="_blank" class="my-1 text-gray-600 decoration-none block">海上修机师</a>
           </div>
           <div
             class="w-1/2 sm:flex flex-col  sm:justify-center sm:w-auto [&>*]:px-3"
