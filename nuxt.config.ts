@@ -31,6 +31,15 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css: [
+    // import 'tdesign-vue-next/es/style/index.css'
+    // import './styles/theme.css'
+    // normalize.css
+    'normalize.css/normalize.css',
+    // tdesign-vue-next
+    'tdesign-vue-next/es/style/index.css',
+    // theme
+  ],
   build: {
     // extractCSS: true,
     transpile: ['tdesign-vue-next'],

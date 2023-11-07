@@ -1,5 +1,4 @@
 <script setup>
-import 'tdesign-vue-next/es/style/index.css'
 import './styles/theme.css'
 
 onBeforeMount(async () => {
