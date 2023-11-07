@@ -22,7 +22,7 @@
               </h1>
             </div>
             <div class="flex items-center  flex-col">
-              <LoginForm />
+              <FormLogin />
             </div>
           </div>
         </div>

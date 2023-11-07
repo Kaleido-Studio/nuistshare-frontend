@@ -5,35 +5,37 @@ const visible = ref(false)
 
 <template>
   <ClientOnly>
-    <MobileDropdown v-model="visible" />
+    <BaseMobileDropdown v-model="visible" />
     <header
-      class="z-255 flex flex-row items-center border-b-gray-300  border-b dummy lg:justify-around justify-between px-4 fixed left-0 right-0 shadow drop-shadow bg-white backdrop-blur top-0"
+      class="z-255  border-b-gray-300
+         fixed left-0 right-0
+      drop-shadow bg-white  top-0 "
     >
-      <THeadMenu>
-        <template #logo>
+      <div class=" flex flex-row justify-between  items-center  mx-auto container px-6">
+        <div class="flex flex-row items-center">
           <h2 class="title-font text-2xl flex flex-row gap-4 justify-around ">
             <span>
               Nuistshare
             </span>
           </h2>
-        </template>
-        <div value="/" class="sm:block! hidden! pl-8 ">
-          <NuxtLink to="/" exact-active-class="router-link-exact-active" class="no-underline">
-            主页
-          </NuxtLink>
+          <div value="/" class="xl:block! hidden! pl-8 ">
+            <NuxtLink to="/" exact-active-class="router-link-exact-active" class="no-underline">
+              主页
+            </NuxtLink>
+          </div>
+          <div value="/archives/entries" class="xl:block! hidden! pl-8 ">
+            <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active" class="no-underline">
+              资料下载
+            </NuxtLink>
+          </div>
+          <div value="/apps/entries" class="xl:block! hidden! pl-8 ">
+            <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active" class="no-underline">
+              软件下载
+            </NuxtLink>
+          </div>
         </div>
-        <div value="/archives/entries" class="sm:block! hidden! pl-8 ">
-          <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active" class="no-underline">
-            资料下载
-          </NuxtLink>
-        </div>
-        <div value="/apps/entries" class="sm:block! hidden! pl-8 ">
-          <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active" class="no-underline">
-            软件下载
-          </NuxtLink>
-        </div>
-        <template #operations>
-          <TSpace v-if="!login.lsLoggedIn" class="sm:flex! hidden!">
+        <div>
+          <TSpace v-if="!login.lsLoggedIn" class="xl:flex! hidden!">
             <NuxtLink to="/auth/login">
               <TButton>
                 登陆
@@ -45,17 +47,17 @@ const visible = ref(false)
               </TButton>
             </NuxtLink>
           </TSpace>
-          <TSpace v-else align="center" class="sm:flex! hidden!">
+          <TSpace v-else align="center" class="xl:flex! hidden!">
             <NuxtLink to="/archives/upload">
               <TButton>
                 上传资料
               </TButton>
             </NuxtLink>
-            <HeaderDropdown />
+            <BaseHeaderDropdown />
           </TSpace>
           <MenuToggle v-model="visible" />
-        </template>
-      </THeadMenu>
+        </div>
+      </div>
     </header>
   </ClientOnly>
 </template>

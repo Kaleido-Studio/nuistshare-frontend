@@ -1,3 +1,3 @@
 <template>
-  <NsHero />
+  <BaseHero />
 </template>

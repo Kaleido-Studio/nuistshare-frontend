@@ -30,11 +30,11 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <NsHeader />
+  <BaseHeader />
   <main>
     <NuxtPage />
   </main>
-  <NsFooter />
+  <BaseFooter />
 </template>
 
 <style>
@@ -46,7 +46,7 @@ body {
 
 html {
   font-family: "PingFang SC";
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   scroll-behavior: smooth;
 }
 

@@ -4,7 +4,7 @@
       正在施工
     </h1>
     <div>
-      <img src="/empty.svg" width="400">
+      <img src="/empty.svg" width="300">
     </div>
   </div>
 </template>

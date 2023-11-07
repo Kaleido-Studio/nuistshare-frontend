@@ -29,7 +29,15 @@ export default defineNuxtConfig({
           href: 'https://nuistshare-cdn.dustella.net/fonts/ysbth/result.css',
         },
       ],
+
     },
+
+  },
+  components: {
+    dirs: [
+      '~/components/common',
+      '~/components',
+    ],
   },
   build: {
     // extractCSS: true,

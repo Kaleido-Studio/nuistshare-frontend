@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Archive } from 'types/Archives'
 import type { TreeNode } from 'types/TreeNode'
-import TagList from './TagList.vue'
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)')
 const pageSize = 10
@@ -72,24 +71,30 @@ watch(currentPage, () => {
     <div
       class="flex flex-row justify-center items-begin gap-10 w-full"
     >
-      <div class="sm:block hidden sticky">
-        <div class="h-auto bg-white p-8 rounded-xl">
+      <div class="xl:block hidden sticky ">
+        <p class="pl-8">
           筛选
-          <br>
+        </p>
+        <div class="h-auto p-8 rounded-xl w-50 bg-[white]! drop-shadow ">
           <FilterTree />
         </div>
       </div>
+      <!-- this is divider -->
+      <div
+        class="border-gray-300 border-solid border-l-0 border-r-1 my-10 xl:block hidden"
+      />
+      <!-- end divider -->
       <div
         class="flex flex-col gap-5 min-w-2/3 sm:max-w-2/3 bg-[white] sm:p-8 p-2 rounded-xl"
       >
-        <TagList :search-keyword="searchKeyword" :l2-filter="l2_filter" @some-close="handleClose" />
+        <ListTag :search-keyword="searchKeyword" :l2-filter="l2_filter" @some-close="handleClose" />
 
         <p class="text-sm text-gray-600">
           筛选后 {{ archiveList?.totalItems }} 条记录, 第 {{ currentPage }} 页
         </p>
 
-        <div class="grid  grid-cols-1 sm:grid-cols-2 gap-2">
-          <SingleEntry
+        <div class="grid  grid-cols-1 xl:grid-cols-2 gap-4">
+          <ListEntry
             v-for="i in archiveList?.data"
             :key="i.id"
             :archive="i"
@@ -111,6 +116,7 @@ watch(currentPage, () => {
 :deep(.t-checkbox__label) {
   /* font-size: 16px; */
   line-height: 24px;
-  color: rgb(99, 99, 99);
+  padding: 3px 6px;
+  color: rgb(0, 0, 0);
 }
 </style>
