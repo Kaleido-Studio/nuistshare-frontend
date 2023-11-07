@@ -35,6 +35,9 @@ export default defineNuxtConfig({
     // extractCSS: true,
     transpile: ['tdesign-vue-next'],
   },
+  css: [
+    'normalize.css/normalize.css',
+  ],
   vue: {
     defineModel: true,
   },
