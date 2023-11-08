@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Archive } from 'types/Archives'
+import type { Archive } from 'composables/types/Archives'
 import { BookmarkDoubleIcon, DownloadIcon, Filter3Icon } from 'tdesign-icons-vue-next'
 
 const props = defineProps<{ item: Archive }>()

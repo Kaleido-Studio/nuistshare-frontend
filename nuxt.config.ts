@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@vueuse/nuxt'],
+  modules: ['tdesign-vue-next/es/nuxt', '@unocss/nuxt', '@vueuse/nuxt', '@pinia/nuxt'],
   ssr: false,
   app: {
     head: {
@@ -37,6 +37,11 @@ export default defineNuxtConfig({
     dirs: [
       '~/components/common',
       '~/components',
+    ],
+  },
+  imports: {
+    dirs: [
+      'composables/clients',
     ],
   },
   build: {

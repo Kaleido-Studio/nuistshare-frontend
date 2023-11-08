@@ -3,19 +3,23 @@ const user = useUser()
 
 function logout() {
   window.localStorage.clear()
-  location.href = '/auth/login'
+  navigateTo('auth/login')
 }
+
+const avatar = computed(() => {
+  return user.avatar
+})
 </script>
 
 <template>
   <TDropdown min-column-width="88px" max-column-width="700px">
     <TAvatar
-      :image="`https://api-nuistshare.dustella.net/api/users/${user.id}/avatar`"
+      :image="avatar"
     />
     <TDropdownMenu placement="bottom-left" :hide-after-item-click="false" trigger="click">
       <TDropdownItem :active="false">
         <div class="py-5 flex-row flex items-center w-70">
-          <TAvatar size="60px" :image="`https://api-nuistshare.dustella.net/api/users/${user.id}/avatar`" />
+          <TAvatar size="60px" :image="avatar" />
           <div class="pl-5">
             <p class="text-base text-black">
               {{ user.name }}

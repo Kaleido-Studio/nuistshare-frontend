@@ -11,6 +11,7 @@ const visible = defineModel()
     placement="top"
     class="z-2!"
     size="80%"
+    attach="body"
     prevent-scroll-through
   >
     <template #footer>
@@ -18,7 +19,7 @@ const visible = defineModel()
     </template>
     <div class="pt-15" />
     <div class="w-full">
-      <div v-if="!login.lsLoggedIn">
+      <div v-if="!login.isLoggedIn">
         <h3 class="text-center">
           提交资料、保存收藏？登录吧！
         </h3>

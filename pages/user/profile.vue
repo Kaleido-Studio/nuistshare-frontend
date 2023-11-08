@@ -12,7 +12,7 @@ const uploadToken = data.value?.uploadToken
 
 async function change(type: string) {
   const body = {} as any
-  body[type] = (user.value as any)[type]
+  body[type] = (user as any)[type]
   const res = await useApi<{ id: number }>('/api/users/me', {
     method: 'PUT',
     body,
@@ -26,7 +26,7 @@ async function change(type: string) {
   // message ok
 }
 
-const verifyMessage = user.value.verified ? '已验证' : '未验证，验证之后才可以上传'
+const verifyMessage = user.verified ? '已验证' : '未验证，验证之后才可以上传'
 </script>
 
 <template>

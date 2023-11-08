@@ -1,54 +1,27 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
-import type { SubmitContext } from 'tdesign-vue-next'
-import { MessagePlugin } from 'tdesign-vue-next'
 import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
+import { MessagePlugin } from 'tdesign-vue-next'
 
-const formData = reactive({
-  email: '',
-  password: '',
-  remember: false,
-})
+const loginC = new LoginClient()
 
-const form = ref(null)
-
-function onReset() {
-  MessagePlugin.success('重置成功')
-}
-
-async function doLogin() {
-  const { email, password } = formData
-  const { data } = await useApi<{ access_token: string }>('/api/login', {
-    method: 'POST',
-    body: JSON.stringify({ email, password }),
-  })
-  if (data.value?.access_token) {
+const { formData, invokeLogin } = loginC
+  .setSuccessNotifier(() => {
     MessagePlugin.success('登录成功')
-    localStorage.setItem('token', data.value.access_token)
-    setTimeout(() => {
-      location.href = '/'
-    }, 3000)
-  }
-  else {
-    MessagePlugin.error(`登录失败,${data.value}`)
-  }
-}
-
-function onSubmit(context: SubmitContext) {
-  const { validateResult, firstError } = context
-  if (validateResult === true)
-    doLogin()
-
-  else
-    MessagePlugin.warning(firstError!)
-}
+  })
+  .setFailureNotifier(() => {
+    MessagePlugin.error('登录失败')
+  })
+  .setSuccessHook(() => {
+    navigateTo('/')
+  })
+  .build()
 </script>
 
 <template>
   <div shadow class="mx-auto max-w-[980px] sm:min-w-[300px]">
-    <t-form ref="form" :data="formData" :colon="true" :label-width="0" @reset="onReset" @submit="onSubmit">
+    <t-form :data="formData" :colon="true" :label-width="0" @submit="invokeLogin">
       <t-form-item name="email">
-        <t-input v-model="formData.email" size="large" clearable placeholder="请输入账户名">
+        <t-input v-model="formData.email" size="large" clearable placeholder="请输入邮箱">
           <template #prefix-icon>
             <DesktopIcon />
           </template>
@@ -90,7 +63,7 @@ function onSubmit(context: SubmitContext) {
       </t-form-item>
     </t-form>
     <TDivider>或者使用第三方账号</TDivider>
-    <div>
+    <div @click="MessagePlugin.error('这个功能还没做')">
       <TIcon size="30px" name="logo-github-filled" />
     </div>
   </div>

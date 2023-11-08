@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Archive } from 'types/Archives'
+import type { Archive } from 'composables/types/Archives'
 
 defineProps<{
   archive: Archive
@@ -19,9 +19,6 @@ defineProps<{
         <p class="sm:text-[16px] text-sm text-gray-600">
           {{ archive.l1Class }} {{ " | " }} {{ archive.l2Class }} {{ " | " }} {{ archive.type }}
         </p>
-        <!-- <p class="sm:text-[14px] text-sm text-gray ">
-          {{ `浏览量 ${archive.viewCount} 下载量 ${archive.downloadCount}` }}
-        </p> -->
       </div>
     </div>
   </div>

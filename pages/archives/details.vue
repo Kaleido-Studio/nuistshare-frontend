@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Archive } from 'types/Archives'
+import type { Archive } from 'composables/types/Archives'
 
 const route = useRoute()
 const id = route.query.id

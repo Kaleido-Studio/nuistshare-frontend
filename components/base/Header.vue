@@ -4,62 +4,60 @@ const visible = ref(false)
 </script>
 
 <template>
-  <ClientOnly>
-    <BaseMobileDropdown v-model="visible" />
-    <header
-      class="z-255  border-b-gray-300
+  <BaseMobileDropdown v-model="visible" />
+  <header
+    class="z-255  border-b-gray-300
          fixed left-0 right-0
       drop-shadow bg-white  top-0 "
-    >
-      <div class=" flex flex-row justify-between  items-center  mx-auto container px-6">
-        <div class="flex flex-row items-center">
-          <h2 class="title-font text-2xl flex flex-row gap-4 justify-around ">
-            <span>
-              Nuistshare
-            </span>
-          </h2>
-          <div value="/" class="xl:block! hidden! pl-8 ">
-            <NuxtLink to="/" exact-active-class="router-link-exact-active" class="no-underline">
-              主页
-            </NuxtLink>
-          </div>
-          <div value="/archives/entries" class="xl:block! hidden! pl-8 ">
-            <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active" class="no-underline">
-              资料下载
-            </NuxtLink>
-          </div>
-          <div value="/apps/entries" class="xl:block! hidden! pl-8 ">
-            <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active" class="no-underline">
-              软件下载
-            </NuxtLink>
-          </div>
+  >
+    <div class=" flex flex-row justify-between  items-center  mx-auto container px-6">
+      <div class="flex flex-row items-center">
+        <h2 class="title-font text-2xl flex flex-row gap-4 justify-around ">
+          <span>
+            Nuistshare
+          </span>
+        </h2>
+        <div value="/" class="xl:block! hidden! pl-8 ">
+          <NuxtLink to="/" exact-active-class="router-link-exact-active" class="no-underline">
+            主页
+          </NuxtLink>
         </div>
-        <div>
-          <TSpace v-if="!login.lsLoggedIn" class="xl:flex! hidden!">
-            <NuxtLink to="/auth/login">
-              <TButton>
-                登陆
-              </TButton>
-            </NuxtLink>
-            <NuxtLink to="/auth/register">
-              <TButton variant="outline">
-                注册
-              </TButton>
-            </NuxtLink>
-          </TSpace>
-          <TSpace v-else align="center" class="xl:flex! hidden!">
-            <NuxtLink to="/archives/upload">
-              <TButton>
-                上传资料
-              </TButton>
-            </NuxtLink>
-            <BaseHeaderDropdown />
-          </TSpace>
-          <MenuToggle v-model="visible" />
+        <div value="/archives/entries" class="xl:block! hidden! pl-8 ">
+          <NuxtLink to="/archives/entries" exact-active-class="router-link-exact-active" class="no-underline">
+            资料下载
+          </NuxtLink>
+        </div>
+        <div value="/apps/entries" class="xl:block! hidden! pl-8 ">
+          <NuxtLink to="/apps/entries" exact-active-class="router-link-exact-active" class="no-underline">
+            软件下载
+          </NuxtLink>
         </div>
       </div>
-    </header>
-  </ClientOnly>
+      <div>
+        <TSpace v-if="!login.isLoggedIn" class="xl:flex! hidden!">
+          <NuxtLink to="/auth/login">
+            <TButton>
+              登陆
+            </TButton>
+          </NuxtLink>
+          <NuxtLink to="/auth/register">
+            <TButton variant="outline">
+              注册
+            </TButton>
+          </NuxtLink>
+        </TSpace>
+        <TSpace v-else align="center" class="xl:flex! hidden!">
+          <NuxtLink to="/archives/upload">
+            <TButton>
+              上传资料
+            </TButton>
+          </NuxtLink>
+          <BaseHeaderDropdown />
+        </TSpace>
+        <MenuToggle v-model="visible" />
+      </div>
+    </div>
+  </header>
 </template>
 
 <style scoped>

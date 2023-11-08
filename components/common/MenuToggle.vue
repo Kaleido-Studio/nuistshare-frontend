@@ -3,8 +3,8 @@ const value = defineModel()
 </script>
 
 <template>
-  <div class="xl:hidden block mr-8">
-    <div class="menuToggle  w-9 ">
+  <div class="xl:hidden block w-17">
+    <div class="menuToggle  ">
       <input v-model="value" type="checkbox">
       <span />
       <span />
