@@ -11,6 +11,9 @@ const useUser = defineStore('user', () => {
   })
 
   const flushUserInfo = async () => {
+    const login = useLogin()
+    if (!login.isLoggedIn)
+      return
     const { data } = await useApi<UserProfile>('/api/users/me')
     const { id, name, email, avatar, phone, verified } = data.value!
     user.id = id

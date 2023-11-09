@@ -1,30 +1,9 @@
-class LoginClient {
-  private successNotifier: (msg: string) => void = (_: string) => { }
-  private failureNotifier: (msg: string) => void = (_: string) => { }
-  private successHook: () => void = () => { }
+class LoginClient extends BaseClient {
   private formData = reactive({
     email: '',
     password: '',
     remember: false,
   })
-
-  public setSuccessNotifier = (notifier: (msg: string) => void) => {
-    this.successNotifier = notifier
-    return this
-  }
-
-  public setFailureNotifier = (notifier: (msg: string) => void) => {
-    this.failureNotifier = notifier
-    return this
-  }
-
-  public setSuccessHook = (hook: () => void) => {
-    this.successHook = hook
-    return this
-  }
-
-  constructor() {
-  }
 
   private checkValid = () => {
     const { email, password } = this.formData
