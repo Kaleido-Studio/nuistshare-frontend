@@ -18,12 +18,12 @@ const useLogin = defineStore('login', () => {
 
   const initData = () => {
     const token = localStorage.getItem('token')
-    if (!token)
-      return
-    const id = getUserId(token)
-    loginStatus.isLoggedIn = true
-    loginStatus.token = token
-    loginStatus.userId = id
+    if (token) {
+      const id = getUserId(token)
+      loginStatus.isLoggedIn = true
+      loginStatus.token = token
+      loginStatus.userId = id
+    }
   }
 
   const setToken = (token: string) => {
@@ -33,10 +33,18 @@ const useLogin = defineStore('login', () => {
     localStorage.setItem('token', token)
   }
 
+  const logout = () => {
+    loginStatus.isLoggedIn = false
+    loginStatus.token = ''
+    loginStatus.userId = -1
+    localStorage.clear()
+  }
+
   return {
     ...toRefs(loginStatus),
     initData,
     setToken,
+    logout,
   }
 })
 

@@ -16,7 +16,8 @@ onBeforeMount(async () => {
   const login = useLogin()
   const user = useUser()
   login.initData()
-  user.flushUserInfo()
+  if (login.isLoggedIn)
+    user.flushUserInfo()
 })
 </script>
 

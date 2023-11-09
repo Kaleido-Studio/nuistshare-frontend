@@ -1,9 +1,9 @@
 {
   "prettier.enable": false,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    // "source.fixAll.eslint": true,
+    // "source.organizeImports": true
   },
 
   // The following is optional.
@@ -14,7 +14,6 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact",
     "vue",
     "html",
     "markdown",

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Archive } from 'composables/types/Archives'
-import type { TreeNode } from 'composables/types/TreeNode'
+import type { Archive } from '~composables/types/Archives'
+import type { TreeNode } from '~composables/types/TreeNode'
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)')
 const pageSize = 10

@@ -2,13 +2,17 @@ import { MessagePlugin } from 'tdesign-vue-next'
 
 async function useApi<T>(path: string, options?: any) {
   const login = useLogin()
+
+  const headers = computed(() => {
+    if (login.isLoggedIn)
+      return { authorization: `Bearer ${login.token}` }
+    else
+      return {}
+  })
   const res = await useFetch<T>(`https://api-nuistshare.dustella.net${path}`, {
     server: false,
     lazy: false,
-    headers: computed(() => (
-      {
-        authorization: `Bearer ${login.token}`,
-      })),
+    headers,
     ...options,
   })
   const error = res.error.value?.data as any
@@ -17,8 +21,5 @@ async function useApi<T>(path: string, options?: any) {
 
   return res
 }
-
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useApi, import.meta.hot))
 
 export default useApi
