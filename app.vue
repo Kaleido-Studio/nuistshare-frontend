@@ -24,7 +24,9 @@ onBeforeMount(async () => {
 <template>
   <BaseHeader />
   <main>
-    <NuxtPage />
+    <div class="mt-8">
+      <NuxtPage />
+    </div>
   </main>
   <BaseFooter />
 </template>

@@ -1,10 +1,11 @@
-class LoginClient {
+class RegisterClient {
   private successNotifier: (msg: string) => void = (_: string) => { }
   private failureNotifier: (msg: string) => void = (_: string) => { }
   private successHook: () => void = () => { }
   private formData = reactive({
     email: '',
     password: '',
+    name: '',
     remember: false,
   })
 
@@ -27,8 +28,8 @@ class LoginClient {
   }
 
   private checkValid = () => {
-    const { email, password } = this.formData
-    if (!email || !password) {
+    const { email, password, name } = this.formData
+    if (!email || !password || !name) {
       this.failureNotifier('请填写完整')
       return false
     }
@@ -41,34 +42,35 @@ class LoginClient {
     return true
   }
 
-  private invokeLogin = async () => {
+  private invokeRegister = async () => {
     const valid = this.checkValid()
     if (!valid)
       return
 
-    const { email, password } = this.formData
-    const { data } = await useApi<{ access_token: string }>('/api/login', {
+    const { email, password, name } = this.formData
+    const { data } = await useApi<{ access_token: string }>('/api/register', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, username: name }),
     })
     if (data.value?.access_token) {
-      this.successNotifier('成功登陆')
+      this.successNotifier('注册成功')
       const login = useLogin()
       const user = useUser()
       login.setToken(data.value?.access_token)
       await user.flushUserInfo()
       this.successHook()
     }
-
-    else { this.failureNotifier(`登陆失败${data.value!}`) }
+    else {
+      this.failureNotifier(`注册失败,${data.value}`)
+    }
   }
 
   public build() {
     return {
       formData: this.formData,
-      invokeLogin: this.invokeLogin,
+      invokeRegister: this.invokeRegister,
     }
   }
 }
 
-export { LoginClient }
+export { RegisterClient }

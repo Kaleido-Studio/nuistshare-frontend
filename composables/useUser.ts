@@ -1,3 +1,5 @@
+import type { UserProfile } from './types/User'
+
 const useUser = defineStore('user', () => {
   const user = reactive({
     id: -1,
@@ -9,8 +11,8 @@ const useUser = defineStore('user', () => {
   })
 
   const flushUserInfo = async () => {
-    const { data } = await useApi('/api/users/me')
-    const { id, name, email, avatar, phone, verified } = data
+    const { data } = await useApi<UserProfile>('/api/users/me')
+    const { id, name, email, avatar, phone, verified } = data.value!
     user.id = id
     user.name = name
     user.email = email

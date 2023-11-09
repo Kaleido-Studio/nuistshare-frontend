@@ -13,9 +13,6 @@
     "skipLibCheck": true,
     "allowJs": true,
     "lib": ["esnext", "dom"],
-    "types": [
-      "vite/client"
-    ]
   },
   "extends": "./.nuxt/tsconfig.json",
   

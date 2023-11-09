@@ -5,15 +5,9 @@ import { MessagePlugin } from 'tdesign-vue-next'
 const loginC = new LoginClient()
 
 const { formData, invokeLogin } = loginC
-  .setSuccessNotifier(() => {
-    MessagePlugin.success('登录成功')
-  })
-  .setFailureNotifier(() => {
-    MessagePlugin.error('登录失败')
-  })
-  .setSuccessHook(() => {
-    navigateTo('/')
-  })
+  .setSuccessNotifier(MessagePlugin.success)
+  .setFailureNotifier(MessagePlugin.error)
+  .setSuccessHook(() => navigateTo('/'))
   .build()
 </script>
 

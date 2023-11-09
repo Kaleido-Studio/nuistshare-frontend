@@ -12,7 +12,7 @@
       background-position: right,right;
     "
   >
-    <div class="flex-col flex items-center py-20">
+    <div class="flex-col flex items-center justify-center  h-full">
       <div class="sm:px-20 px-10 shadow drop-shadow-xl bg-white/90 rounded-xl mx-auto ">
         <div class="flex  flex-row items-center justify-center py-10">
           <div>

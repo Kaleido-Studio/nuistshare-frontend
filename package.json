@@ -27,7 +27,7 @@
     "@nuxt/devtools": "latest",
     "@types/node": "^18.16.19",
     "@unocss/nuxt": "^0.53.5",
-    "eslint": "^8.45.0",
+    "eslint": "^8.53.0",
     "nuxt": "^3.8.1",
     "typescript": "^5.2.2",
     "unplugin-auto-import": "^0.16.6",

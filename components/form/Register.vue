@@ -1,53 +1,19 @@
 <script setup lang="ts">
-import { reactive } from 'vue'
-import type { SubmitContext } from 'tdesign-vue-next'
 import { MessagePlugin } from 'tdesign-vue-next'
 import { DesktopIcon, LockOnIcon } from 'tdesign-icons-vue-next'
 
-const formData = reactive({
-  email: '',
-  password: '',
-  name: '',
-  remember: false,
-})
+const registerC = new RegisterClient()
 
-const form = ref(null)
-
-function onReset() {
-  MessagePlugin.success('重置成功')
-}
-
-async function doRegister() {
-  const { email, password } = formData
-  const { data } = await useApi<{ access_token: string }>('/api/register', {
-    method: 'POST',
-    body: JSON.stringify({ email, password, username: formData.name }),
-  })
-  if (data.value?.access_token) {
-    MessagePlugin.success('注册成功')
-    localStorage.setItem('token', data.value.access_token)
-    setTimeout(() => {
-      location.href = '/'
-    }, 3000)
-  }
-  else {
-    MessagePlugin.error(`注册失败,${data.value}`)
-  }
-}
-
-function onSubmit(context: SubmitContext) {
-  const { validateResult, firstError } = context
-  if (validateResult === true)
-    doRegister()
-
-  else
-    MessagePlugin.warning(firstError!)
-}
+const { formData, invokeRegister } = registerC
+  .setFailureNotifier(MessagePlugin.error)
+  .setSuccessNotifier(MessagePlugin.success)
+  .setSuccessHook(() => navigateTo('/'))
+  .build()
 </script>
 
 <template>
   <div shadow class="mx-auto max-w-[980px] sm:min-w-[300px]">
-    <t-form ref="form" :data="formData" :colon="true" :label-width="0" @reset="onReset" @submit="onSubmit">
+    <t-form :data="formData" :colon="true" :label-width="0" @submit="invokeRegister">
       <t-form-item name="email">
         <t-input v-model="formData.email" size="large" clearable placeholder="请输入你的邮件">
           <template #prefix-icon>
