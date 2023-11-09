@@ -1,19 +1,5 @@
 {
+  "extends": "./.nuxt/tsconfig.json"
   // https://nuxt.com/docs/guide/concepts/typescript
 
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowJs": true,
-    "lib": ["esnext", "dom"],
-  },
-  "extends": "./.nuxt/tsconfig.json",
-  
 }
