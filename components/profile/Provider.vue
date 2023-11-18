@@ -2,13 +2,6 @@
 import { MessagePlugin } from 'tdesign-vue-next'
 
 const user = useUser()
-const imageFile = ref([])
-
-const { data } = await useApi<{ uploadToken: string }>('/api/upload/token', {
-  method: 'GET',
-})
-
-const uploadToken = data.value?.uploadToken
 
 async function change(type: string) {
   const body = {} as any
@@ -39,47 +32,27 @@ const verifyMessage = user.verified ? '已验证' : '未验证，验证之后才
     />
 
     <InfoCard no-button title="头像" description="上传以修改头像" icon="personal-information" @submit="change('name')">
-      <t-upload
-        v-model="imageFile"
-        theme="image"
-        tips="只能上传jpg/png文件，且不超过500kb"
-        action="https://up-cn-east-2.qiniup.com"
-        :data="{
-          token: uploadToken,
-        }"
-        :format-response="(resp:any) => {
-          const url = `https://nuistshare-cdn.dustella.net/${resp.key}`
-          return { url }
-        }"
-        auto-upload
-        accept="image/*"
-        :locale="{
-          triggerUploadText: {
-            image: '请选择图片',
-          },
-        }"
-        @success="async(context:any) => {
-          console.log(context)
-          const url = context.response.url
-          await useApi('/api/users/me', {
-            method: 'PUT',
-            body: {
-              avatar: url,
-            },
-          })
-        }"
-      />
+      <template #avatar>
+        <FormAvatar />
+      </template>
     </InfoCard>
     <InfoCard title="用户名" description="请你在这里修改你的用户名" icon="personal-information" @submit="change('name')">
-      <TInput v-model="user.name" size="" />
+      <TInput v-model="user.name" size="" class="lg:max-w-70" />
     </InfoCard>
     <InfoCard title="邮箱" description="请你在这里修改你的邮件" icon="mail" @submit="change('email')">
-      <TInput v-model="user.email" size="" />
+      <TInput v-model="user.email" size="" class="lg:max-w-70" />
     </InfoCard>
     <InfoCard title="密码" description="请谨慎修改密码" icon="user-unlocked" button-red @submit="$router.push('/auth/reset')" />
   </div>
 </template>
 
 <style scoped>
-
+.loading-container {
+  width: 100%;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px var(--component-border, #eee) solid;
+}
 </style>
